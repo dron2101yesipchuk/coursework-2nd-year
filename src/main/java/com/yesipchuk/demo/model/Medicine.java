@@ -8,7 +8,7 @@ public class Medicine {
     private TypeOfMedicine typeOfMedicine;
     private Integer criticalRate;
     private Integer amount;
-    private Integer price;
+    private Double price;
     private Date manufactureDate;
     private Integer expirationTerm;
 
@@ -16,7 +16,7 @@ public class Medicine {
     }
 
     public Medicine(Integer id, String nameOfMedicine, TypeOfMedicine typeOfMedicine,
-                    Integer criticalRate, Integer amount, Integer price,
+                    Integer criticalRate, Integer amount, Double price,
                     Date manufactureDate, Integer expirationTerm) {
         this.id = id;
         this.nameOfMedicine = nameOfMedicine;
@@ -68,11 +68,11 @@ public class Medicine {
         this.amount = amount;
     }
 
-    public Integer getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
