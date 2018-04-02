@@ -3,16 +3,13 @@ package com.yesipchuk.demo.datastorage;
 import com.yesipchuk.demo.model.*;
 import org.springframework.context.annotation.Configuration;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 @Configuration
 public class DataStorageFake {
-    Date date;
-
-    public List<Buyer> buyers = new ArrayList<>(
+    private List<Buyer> buyers = new ArrayList<>(
             Arrays.asList(
             new Buyer(1,"Єсипчук Андрій Євгенович", 19),
             new Buyer(2,"Осадчук Роман Романович", 18),
@@ -34,8 +31,8 @@ public class DataStorageFake {
     public List<Buyer> getBuyers(){
         return buyers;
     }
-
-    public List<DatesOfOrderingAndReceiving> datesOfOrderingAndReceivingList = new ArrayList<>(
+/*
+    private List<DatesOfOrderingAndReceiving> datesOfOrderingAndReceivingList = new ArrayList<>(
             Arrays.asList(
             new DatesOfOrderingAndReceiving(1, new Date(2017-12-20),new Date(2017-12-25) , this.getOrderStatuses().get(2)),
             new DatesOfOrderingAndReceiving(2, new Date(2017- 1 -20),new Date(2017- 1 -21) , this.getOrderStatuses().get(0)),
@@ -60,8 +57,8 @@ public class DataStorageFake {
     public List<DatesOfOrderingAndReceiving> getDatesOfOrderingAndReceiving(){
         return datesOfOrderingAndReceivingList;
     }
-
-    public List<OrderStatus> orderStatuses = new ArrayList<>(
+*/
+    private List<OrderStatus> orderStatuses = new ArrayList<>(
             Arrays.asList(
             new OrderStatus(1,"Отриманий"),
             new OrderStatus(2,"Очікує прибуття"),
@@ -73,7 +70,7 @@ public class DataStorageFake {
         return orderStatuses;
     }
 
-    public List<GeneralTypeOfMedicine> generalTypeOfMedicineList = new ArrayList<>(
+    private List<GeneralTypeOfMedicine> generalTypeOfMedicineList = new ArrayList<>(
             Arrays.asList(
                     new GeneralTypeOfMedicine(1, "Готові ліки"),
                     new GeneralTypeOfMedicine(2, "Вироблені аптекою")
@@ -83,7 +80,7 @@ public class DataStorageFake {
         return generalTypeOfMedicineList;
     }
 
-    public List<TypeOfProduction> typeOfProductionList = new ArrayList<>(
+    private List<TypeOfProduction> typeOfProductionList = new ArrayList<>(
             Arrays.asList(
                     new TypeOfProduction(1, "Змішування"),
                     new TypeOfProduction(2, "Змішування і відстоювання"),
@@ -94,7 +91,7 @@ public class DataStorageFake {
         return typeOfProductionList;
     }
 
-    public List<TypeOfUsing> typeOfUsingList = new ArrayList<>(
+    private List<TypeOfUsing> typeOfUsingList = new ArrayList<>(
             Arrays.asList(
                     new TypeOfUsing(1, "Внутрішнє"),
                     new TypeOfUsing(2, "Зовнішнє"),
@@ -105,7 +102,7 @@ public class DataStorageFake {
         return typeOfUsingList;
     }
 
-    public List<TypeOfMedicine> typeOfMedicineList = new ArrayList<>(
+    private List<TypeOfMedicine> typeOfMedicineList = new ArrayList<>(
             Arrays.asList(
                     new TypeOfMedicine(1, "Таблетки", this.generalTypeOfMedicineList.get(0), this.typeOfProductionList.get(2)),
                     new TypeOfMedicine(2, "Мазі", this.generalTypeOfMedicineList.get(0), this.typeOfProductionList.get(2)),
@@ -122,28 +119,28 @@ public class DataStorageFake {
         return typeOfMedicineList;
     }
 
-    public List<TypeOfMedicineHasTypeOfUsing> typeOfMedicineHasTypeOfUsingList = new ArrayList<>(
-            Arrays.asList(
-                    new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(0), this.typeOfUsingList.get(0)),
-                    new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(2), this.typeOfUsingList.get(0)),
-                    new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(3), this.typeOfUsingList.get(0)),
-                    new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(4), this.typeOfUsingList.get(0)),
-                    new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(5), this.typeOfUsingList.get(0)),
-                    new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(6), this.typeOfUsingList.get(0)),
-                    new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(7), this.typeOfUsingList.get(0)),
-                    new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(1), this.typeOfUsingList.get(1)),
-                    new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(2), this.typeOfUsingList.get(1)),
-                    new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(5), this.typeOfUsingList.get(1)),
-                    new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(6), this.typeOfUsingList.get(1)),
-                    new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(5), this.typeOfUsingList.get(2))
+        private List<TypeOfMedicineHasTypeOfUsing> typeOfMedicineHasTypeOfUsingList = new ArrayList<>(
+                Arrays.asList(
+                        new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(0), this.typeOfUsingList.get(0)),
+                        new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(2), this.typeOfUsingList.get(0)),
+                        new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(3), this.typeOfUsingList.get(0)),
+                        new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(4), this.typeOfUsingList.get(0)),
+                        new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(5), this.typeOfUsingList.get(0)),
+                        new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(6), this.typeOfUsingList.get(0)),
+                        new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(7), this.typeOfUsingList.get(0)),
+                        new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(1), this.typeOfUsingList.get(1)),
+                        new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(2), this.typeOfUsingList.get(1)),
+                        new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(5), this.typeOfUsingList.get(1)),
+                        new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(6), this.typeOfUsingList.get(1)),
+                        new TypeOfMedicineHasTypeOfUsing(this.typeOfMedicineList.get(5), this.typeOfUsingList.get(2))
 
-            ));
+                ));
 
-    public List<TypeOfMedicineHasTypeOfUsing> getTypeOfMedicineHasTypeOfUsingList(){
-        return typeOfMedicineHasTypeOfUsingList;
-    }
+        public List<TypeOfMedicineHasTypeOfUsing> getTypeOfMedicineHasTypeOfUsingList(){
+            return typeOfMedicineHasTypeOfUsingList;
+        }
 
-    public List<Ingredients> ingredients = new ArrayList<>(
+    private List<Ingredients> ingredients = new ArrayList<>(
             Arrays.asList(
                     new Ingredients(1,"Листя малини", 20, 100, 10d),
                     new Ingredients(2,"Корінь алтея", 100, 500, 5d),
@@ -165,8 +162,8 @@ public class DataStorageFake {
     public List<Ingredients> getIngredients(){
         return ingredients;
     }
-
-    public List<Medicine> medicines = new ArrayList<>(
+/*
+    private List<Medicine> medicines = new ArrayList<>(
             Arrays.asList(
                     new Medicine(1, "Аспірін", this.typeOfMedicineList.get(0), 10, 25, 10.5d, new Date(2016-3-1), 36),
                     new Medicine(2, "Біопарокс", this.typeOfMedicineList.get(2), 15, 15, 20d, new Date(2017- 7 -8), 12),
@@ -191,7 +188,7 @@ public class DataStorageFake {
         return medicines;
     }
 
-    public List<MedicineHasIngredients> medicineHasIngredients = new ArrayList<>(
+    private List<MedicineHasIngredients> medicineHasIngredients = new ArrayList<>(
             Arrays.asList(
                     new MedicineHasIngredients(this.medicines.get(9), this.ingredients.get(13), 50),
                     new MedicineHasIngredients(this.medicines.get(9), this.ingredients.get(14), 100),
@@ -213,7 +210,7 @@ public class DataStorageFake {
         return medicineHasIngredients;
     }
 
-    public List<BuyersHasMedicines> buyersHasMedicines = new ArrayList<>(
+    private List<BuyersHasMedicines> buyersHasMedicines = new ArrayList<>(
             Arrays.asList(
                     new BuyersHasMedicines(this.buyers.get(0), this.medicines.get(0), this.datesOfOrderingAndReceivingList.get(0), null, null, 2),
                     new BuyersHasMedicines(this.buyers.get(1), this.medicines.get(2), this.datesOfOrderingAndReceivingList.get(9), null, null, 4),
@@ -247,5 +244,5 @@ public class DataStorageFake {
         return buyersHasMedicines;
     }
 
-
+*/
 }
