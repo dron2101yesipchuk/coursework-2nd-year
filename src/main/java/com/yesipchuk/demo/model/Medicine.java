@@ -1,7 +1,5 @@
 package com.yesipchuk.demo.model;
 
-import java.sql.Date;
-
 public class Medicine {
     private Integer id;
     private String nameOfMedicine;
@@ -9,7 +7,7 @@ public class Medicine {
     private Integer criticalRate;
     private Integer amount;
     private Double price;
-    private Date manufactureDate;
+    private String manufactureDate;
     private Integer expirationTerm;
 
     public Medicine() {
@@ -17,7 +15,7 @@ public class Medicine {
 
     public Medicine(Integer id, String nameOfMedicine, TypeOfMedicine typeOfMedicine,
                     Integer criticalRate, Integer amount, Double price,
-                    Date manufactureDate, Integer expirationTerm) {
+                    String manufactureDate, Integer expirationTerm) {
         this.id = id;
         this.nameOfMedicine = nameOfMedicine;
         this.typeOfMedicine = typeOfMedicine;
@@ -76,11 +74,11 @@ public class Medicine {
         this.price = price;
     }
 
-    public Date getManufactureDate() {
+    public String getManufactureDate() {
         return manufactureDate;
     }
 
-    public void setManufactureDate(Date manufactureDate) {
+    public void setManufactureDate(String manufactureDate) {
         this.manufactureDate = manufactureDate;
     }
 

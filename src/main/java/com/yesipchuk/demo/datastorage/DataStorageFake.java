@@ -3,7 +3,6 @@ package com.yesipchuk.demo.datastorage;
 import com.yesipchuk.demo.model.*;
 import org.springframework.context.annotation.Configuration;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -47,24 +46,24 @@ public class DataStorageFake {
 
     private List<DatesOfOrderingAndReceiving> datesOfOrderingAndReceivingList = new ArrayList<>(
             Arrays.asList(
-            new DatesOfOrderingAndReceiving(1, new Date(2017-12-20),new Date(2017-12-25) , this.getOrderStatuses().get(2)),
-            new DatesOfOrderingAndReceiving(2, new Date(2017- 1 -20),new Date(2017- 1 -21) , this.getOrderStatuses().get(0)),
-            new DatesOfOrderingAndReceiving(3, new Date(2017-9-21),new Date(2017-10-25) , this.getOrderStatuses().get(0)),
-            new DatesOfOrderingAndReceiving(4, new Date(2017- 6 -15),new Date(2017- 6 -20) , this.getOrderStatuses().get(0)),
-            new DatesOfOrderingAndReceiving(5, new Date(2017- 4 -11),new Date(2017-5-20) , this.getOrderStatuses().get(0)),
-            new DatesOfOrderingAndReceiving(6, new Date(2017- 7 -20),new Date(2017- 9 - 1) , this.getOrderStatuses().get(0)),
-            new DatesOfOrderingAndReceiving(7, new Date(2017- 1 -20),new Date(2017- 1 -31) , this.getOrderStatuses().get(2)),
-            new DatesOfOrderingAndReceiving(8, new Date(2017- 3 -10),new Date(2017- 3 -20) , this.getOrderStatuses().get(0)),
-            new DatesOfOrderingAndReceiving(9, new Date(2017- 1 -20),new Date(2017- 1 -20) , this.getOrderStatuses().get(0)),
-            new DatesOfOrderingAndReceiving(10, new Date(2017- 2 -20),new Date(2017- 2 -22) , this.getOrderStatuses().get(0)),
-            new DatesOfOrderingAndReceiving(11, new Date(2018- 2 -20),new Date(2018-3-17) , this.getOrderStatuses().get(1)),
-            new DatesOfOrderingAndReceiving(12, new Date(2017- 3 -29),new Date(2017- 4 - 5) , this.getOrderStatuses().get(0)),
-            new DatesOfOrderingAndReceiving(13, new Date(2017- 7 -20),new Date(2017- 7 -20) , this.getOrderStatuses().get(0)),
-            new DatesOfOrderingAndReceiving(14, new Date(2018- 1 -20),new Date(2018- 3 -17) , this.getOrderStatuses().get(1)),
-            new DatesOfOrderingAndReceiving(15, new Date(2016-12-20),new Date(2017- 1 -27) , this.getOrderStatuses().get(0)),
-            new DatesOfOrderingAndReceiving(16, new Date(2018- 3 -10),new Date(2018- 3 -15) , this.getOrderStatuses().get(3)),
-            new DatesOfOrderingAndReceiving(17, new Date(2017-12-25),new Date(2018- 1 -10) , this.getOrderStatuses().get(0)),
-            new DatesOfOrderingAndReceiving(18, new Date(2018- 3 -10),new Date(2018- 3 -14) , this.getOrderStatuses().get(3))
+            new DatesOfOrderingAndReceiving(1, "2017-12-20","2017-12-25" , this.getOrderStatuses().get(2)),
+            new DatesOfOrderingAndReceiving(2, "2017-01-20","2017-01-21" , this.getOrderStatuses().get(0)),
+            new DatesOfOrderingAndReceiving(3, "2017-09-21","2017-10-25" , this.getOrderStatuses().get(0)),
+            new DatesOfOrderingAndReceiving(4, "2017-06-15","2017-06-20" , this.getOrderStatuses().get(0)),
+            new DatesOfOrderingAndReceiving(5, "2017-04-11","2017-05-20" , this.getOrderStatuses().get(0)),
+            new DatesOfOrderingAndReceiving(6, "2017-07-20","2017-09-01" , this.getOrderStatuses().get(0)),
+            new DatesOfOrderingAndReceiving(7, "2017-01-20","2017-01-31" , this.getOrderStatuses().get(2)),
+            new DatesOfOrderingAndReceiving(8, "2017-03-10","2017-03-20" , this.getOrderStatuses().get(0)),
+            new DatesOfOrderingAndReceiving(9, "2017-01-20","2017-01-20" , this.getOrderStatuses().get(0)),
+            new DatesOfOrderingAndReceiving(10, "2017-02-20","2017-02-22" , this.getOrderStatuses().get(0)),
+            new DatesOfOrderingAndReceiving(11, "2018-02-20","2018-03-17" , this.getOrderStatuses().get(1)),
+            new DatesOfOrderingAndReceiving(12, "2017-03-29","2017-04-05" , this.getOrderStatuses().get(0)),
+            new DatesOfOrderingAndReceiving(13, "2017-07-20","2017-07-20" , this.getOrderStatuses().get(0)),
+            new DatesOfOrderingAndReceiving(14, "2018-01-20","2018-03-17" , this.getOrderStatuses().get(1)),
+            new DatesOfOrderingAndReceiving(15, "2016-12-20","2017-01-27" , this.getOrderStatuses().get(0)),
+            new DatesOfOrderingAndReceiving(16, "2018-03-10","2018-03-15" , this.getOrderStatuses().get(3)),
+            new DatesOfOrderingAndReceiving(17, "2017-12-25","2018-01-10" , this.getOrderStatuses().get(0)),
+            new DatesOfOrderingAndReceiving(18, "2018-03-10","2018-03-14" , this.getOrderStatuses().get(3))
     ));
 
     public List<DatesOfOrderingAndReceiving> getDatesOfOrderingAndReceiving(){
@@ -166,22 +165,22 @@ public class DataStorageFake {
 
     private List<Medicine> medicines = new ArrayList<>(
             Arrays.asList(
-                    new Medicine(1, "Аспірін", this.typeOfMedicineList.get(0), 10, 25, 10.5d, new Date(2016-3-1), 36),
-                    new Medicine(2, "Біопарокс", this.typeOfMedicineList.get(2), 15, 15, 20d, new Date(2017- 7 -8), 12),
-                    new Medicine(3, "Евказалін", this.typeOfMedicineList.get(2), 12, 10, 75d, new Date(2018- 1 -21), 16),
-                    new Medicine(4, "Накспрей", this.typeOfMedicineList.get(2), 14, 13, 80d, new Date(2018- 3 - 1), 14),
-                    new Medicine(5, "Супрастін", this.typeOfMedicineList.get(0), 5, 10, 57d, new Date(2017-12-25), 24),
-                    new Medicine(6, "Левоміцитин", this.typeOfMedicineList.get(0), 8, 6, 30d, new Date(2017-12-24), 12),
-                    new Medicine(7, "Ношпа", this.typeOfMedicineList.get(0), 10, 30, 90d, new Date(2015-10-15), 24),
-                    new Medicine(8, "Настойка пустирника", this.typeOfMedicineList.get(2), 6, 25, 150d, new Date(2017- 1 -17), 10),
-                    new Medicine(9, "Ламізил", this.typeOfMedicineList.get(1), 5, 8, 70d, new Date(2017-9-12), 20),
+                    new Medicine(1, "Аспірін", this.typeOfMedicineList.get(0), 10, 25, 10.5d, "2016-03-01", 36),
+                    new Medicine(2, "Біопарокс", this.typeOfMedicineList.get(2), 15, 15, 20d, "2017-07-08", 12),
+                    new Medicine(3, "Евказалін", this.typeOfMedicineList.get(2), 12, 10, 75d, "2018-01-21", 16),
+                    new Medicine(4, "Накспрей", this.typeOfMedicineList.get(2), 14, 13, 80d, "2018-03-01", 14),
+                    new Medicine(5, "Супрастін", this.typeOfMedicineList.get(0), 5, 10, 57d, "2017-12-25", 24),
+                    new Medicine(6, "Левоміцитин", this.typeOfMedicineList.get(0), 8, 6, 30d, "2017-12-24", 12),
+                    new Medicine(7, "Ношпа", this.typeOfMedicineList.get(0), 10, 30, 90d, "2015-10-15", 24),
+                    new Medicine(8, "Настойка пустирника", this.typeOfMedicineList.get(2), 6, 25, 150d, "2017-01-17", 10),
+                    new Medicine(9, "Ламізил", this.typeOfMedicineList.get(1), 5, 8, 70d, "2017-09-12", 20),
                     new Medicine(10, "Рецепт10", this.typeOfMedicineList.get(3), 0, 0, 10d, null, 2),
                     new Medicine(11, "Рецепт11", this.typeOfMedicineList.get(4), 0, 0, 52.5d, null, 3),
                     new Medicine(12, "Рецепт12", this.typeOfMedicineList.get(5), 0, 0, 23.25d, null, 5),
                     new Medicine(13, "Рецепт13", this.typeOfMedicineList.get(6), 0, 0, 50d, null, 4),
                     new Medicine(14, "Рецепт14", this.typeOfMedicineList.get(6), 0, 0, 30d, null, 10),
                     new Medicine(15, "Рецепт15", this.typeOfMedicineList.get(7), 0, 0, 25d, null, 7),
-                    new Medicine(16, "Мазь вишневського", this.typeOfMedicineList.get(1), 10, 29, 40d, new Date(2015- 3 -26), 24),
+                    new Medicine(16, "Мазь вишневського", this.typeOfMedicineList.get(1), 10, 29, 40d, "2015-03-26", 24),
                     new Medicine(17, "Рецепт17", this.typeOfMedicineList.get(7), 0, 0, 26d, null, 5)
             ));
 
