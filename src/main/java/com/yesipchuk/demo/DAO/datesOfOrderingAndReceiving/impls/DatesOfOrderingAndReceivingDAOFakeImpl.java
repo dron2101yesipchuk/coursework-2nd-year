@@ -16,6 +16,6 @@ public class DatesOfOrderingAndReceivingDAOFakeImpl implements IDatesOfOrderingA
 
     @Override
     public List<DatesOfOrderingAndReceiving> getAll() {
-        return null;//dataStorage.getDatesOfOrderingAndReceiving();
+        return dataStorage.getDatesOfOrderingAndReceiving();
     }
 }

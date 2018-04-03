@@ -16,6 +16,6 @@ public class MedicineHasIngredientsDAOFakeImpl implements IMedicinesHasIngredien
 
     @Override
     public List<MedicineHasIngredients> getAll() {
-        return null;//dataStorage.getMedicineHasIngredients();
+        return dataStorage.getMedicineHasIngredients();
     }
 }

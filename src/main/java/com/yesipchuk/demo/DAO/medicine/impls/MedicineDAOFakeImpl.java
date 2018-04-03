@@ -16,6 +16,6 @@ public class MedicineDAOFakeImpl implements IMedicineDao {
 
     @Override
     public List<Medicine> getAll() {
-        return null;//dataStorage.getMedicines();
+        return dataStorage.getMedicines();
     }
 }

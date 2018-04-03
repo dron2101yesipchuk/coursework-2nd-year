@@ -16,6 +16,6 @@ public class BuyerHasMedicinesDAOFakeImpl implements IBuyerHasMedicinesDao {
 
     @Override
     public List<BuyersHasMedicines> getAll() {
-        return null;//dataStorage.getBuyerHasMedicines();
+        return dataStorage.getBuyerHasMedicines();
     }
 }

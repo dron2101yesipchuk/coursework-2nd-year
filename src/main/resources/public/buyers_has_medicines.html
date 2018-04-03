@@ -17,7 +17,7 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th>    </th>
+
                             <th>id Покупця</th>
                             <th>id Медикаменту</th>
                             <th>id Дати замовлення і отримання</th>
@@ -26,24 +26,22 @@
                             <th>Кількість медикаменту</th>
                         </tr>
                         </thead>
-                        <!--<tbody>
+                        <tbody>
 
-                        <tr ng-repeat = "item in chairs">
-                            <td> <input type="radio" name="group"></td>
-                            <td>{{item.id}}</td>
-                            <td>{{item.PIB}}</td>
-                            <td>{{item.age}}</td>
-                            <td><button ng-click="ctrl.delchair(item.id)">DEL</button>
+                        <tr ng-repeat = "item in buyer_has_medicines">
+
+                            <td>{{item.buyer.id}}</td>
+                            <td>{{item.medicine.id}}</td>
+                            <td>{{item.datesOfOrderingAndReceiving.id}}</td>
+                            <td>{{item.doctorPIB}}</td>
+                            <td>{{item.diagnosis}}</td>
+                            <td>{{item.amountOfMedicine}}</td>
 
                         </tr>
 
-                        </tbody>-->
+                        </tbody>
 
                     </table>
-
-
-
-
 
                 </div>
             </div>

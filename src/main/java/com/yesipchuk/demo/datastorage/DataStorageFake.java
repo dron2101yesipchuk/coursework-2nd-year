@@ -3,6 +3,7 @@ package com.yesipchuk.demo.datastorage;
 import com.yesipchuk.demo.model.*;
 import org.springframework.context.annotation.Configuration;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -31,7 +32,19 @@ public class DataStorageFake {
     public List<Buyer> getBuyers(){
         return buyers;
     }
-/*
+
+    private List<OrderStatus> orderStatuses = new ArrayList<>(
+            Arrays.asList(
+                    new OrderStatus(1,"Отриманий"),
+                    new OrderStatus(2,"Очікує прибуття"),
+                    new OrderStatus(3,"Не забраний"),
+                    new OrderStatus(4,"Виготовляється")
+            ));
+
+    public List<OrderStatus> getOrderStatuses(){
+        return orderStatuses;
+    }
+
     private List<DatesOfOrderingAndReceiving> datesOfOrderingAndReceivingList = new ArrayList<>(
             Arrays.asList(
             new DatesOfOrderingAndReceiving(1, new Date(2017-12-20),new Date(2017-12-25) , this.getOrderStatuses().get(2)),
@@ -56,18 +69,6 @@ public class DataStorageFake {
 
     public List<DatesOfOrderingAndReceiving> getDatesOfOrderingAndReceiving(){
         return datesOfOrderingAndReceivingList;
-    }
-*/
-    private List<OrderStatus> orderStatuses = new ArrayList<>(
-            Arrays.asList(
-            new OrderStatus(1,"Отриманий"),
-            new OrderStatus(2,"Очікує прибуття"),
-            new OrderStatus(3,"Не забраний"),
-            new OrderStatus(4,"Виготовляється")
-    ));
-
-    public List<OrderStatus> getOrderStatuses(){
-        return orderStatuses;
     }
 
     private List<GeneralTypeOfMedicine> generalTypeOfMedicineList = new ArrayList<>(
@@ -162,7 +163,7 @@ public class DataStorageFake {
     public List<Ingredients> getIngredients(){
         return ingredients;
     }
-/*
+
     private List<Medicine> medicines = new ArrayList<>(
             Arrays.asList(
                     new Medicine(1, "Аспірін", this.typeOfMedicineList.get(0), 10, 25, 10.5d, new Date(2016-3-1), 36),
@@ -240,9 +241,8 @@ public class DataStorageFake {
                     new BuyersHasMedicines(this.buyers.get(14), this.medicines.get(16), this.datesOfOrderingAndReceivingList.get(10), "Клименко Л.С.", "Запалення рани", 5)
             ));
 
-    public List<BuyersHasMedicines> getBuyerHasMedicines(){
+
+    public List<BuyersHasMedicines> getBuyerHasMedicines() {
         return buyersHasMedicines;
     }
-
-*/
 }
