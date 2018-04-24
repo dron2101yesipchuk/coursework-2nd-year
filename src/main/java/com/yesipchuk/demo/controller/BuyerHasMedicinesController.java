@@ -1,11 +1,12 @@
 package com.yesipchuk.demo.controller;
 
-import com.yesipchuk.demo.model.BuyersHasMedicines;
+import com.yesipchuk.demo.modelJDBC.BuyerHasMedicines;
 import com.yesipchuk.demo.service.buyerHasMedicines.impls.BuyerHasMedicinesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @RestController
@@ -15,7 +16,7 @@ public class BuyerHasMedicinesController {
     BuyerHasMedicinesService buyerHasMedicinesService;
 
     @RequestMapping("/buyer_has_medicines")
-    public List<BuyersHasMedicines> showBuyers(){
+    public List<BuyerHasMedicines> showBuyers() throws SQLException {
         return buyerHasMedicinesService.getAll();
     }
 }

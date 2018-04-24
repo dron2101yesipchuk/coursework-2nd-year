@@ -1,8 +1,13 @@
 package com.yesipchuk.demo.modelJDBC;
 
-public class Order_status {
+public class OrderStatus {
   private Long id;
   private String name_of_status;
+
+  public OrderStatus(Long id, String name_of_status) {
+    this.id = id;
+    this.name_of_status = name_of_status;
+  }
 
   public Long getId() {
     return id;

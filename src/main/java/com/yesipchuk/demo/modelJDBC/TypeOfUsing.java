@@ -1,8 +1,13 @@
 package com.yesipchuk.demo.modelJDBC;
 
-public class Type_of_using {
+public class TypeOfUsing {
   private Long id;
   private String type_of_using;
+
+  public TypeOfUsing(Long id, String type_of_using) {
+    this.id = id;
+    this.type_of_using = type_of_using;
+  }
 
   public Long getId() {
     return id;

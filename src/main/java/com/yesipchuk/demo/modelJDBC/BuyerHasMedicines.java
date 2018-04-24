@@ -1,12 +1,23 @@
 package com.yesipchuk.demo.modelJDBC;
 
-public class Buyer_has_medicine {
+public class BuyerHasMedicines {
   private Long buyer_id;
   private Long medicine_id;
   private Long dates_of_ordering_and_receiving_id;
   private String pib_of_doctor;
   private String diagnosis;
   private Long amount_of_medicine;
+
+  public BuyerHasMedicines(Long buyer_id, Long medicine_id,
+                           Long dates_of_ordering_and_receiving_id,
+                           String pib_of_doctor, String diagnosis, Long amount_of_medicine) {
+    this.buyer_id = buyer_id;
+    this.medicine_id = medicine_id;
+    this.dates_of_ordering_and_receiving_id = dates_of_ordering_and_receiving_id;
+    this.pib_of_doctor = pib_of_doctor;
+    this.diagnosis = diagnosis;
+    this.amount_of_medicine = amount_of_medicine;
+  }
 
   public Long getBuyer_id() {
     return buyer_id;

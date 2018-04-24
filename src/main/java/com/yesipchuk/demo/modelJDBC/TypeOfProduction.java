@@ -1,8 +1,13 @@
 package com.yesipchuk.demo.modelJDBC;
 
-public class Type_of_production {
+public class TypeOfProduction {
   private Long id;
   private String type_of_production;
+
+  public TypeOfProduction(Long id, String type_of_production) {
+    this.id = id;
+    this.type_of_production = type_of_production;
+  }
 
   public Long getId() {
     return id;

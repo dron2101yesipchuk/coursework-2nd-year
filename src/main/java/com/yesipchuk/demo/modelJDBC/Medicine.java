@@ -1,5 +1,7 @@
 package com.yesipchuk.demo.modelJDBC;
 
+import java.sql.Date;
+
 public class Medicine {
   private Long id;
   private String name_of_medicine;
@@ -9,6 +11,18 @@ public class Medicine {
   private Double price;
   private java.sql.Date manufacture_date;
   private Long expiration_term;
+
+  public Medicine(Long id, String name_of_medicine, Long type_of_medicine_id, Long critical_rate,
+                  Long amount, Double price, Date manufacture_date, Long expiration_term) {
+    this.id = id;
+    this.name_of_medicine = name_of_medicine;
+    this.type_of_medicine_id = type_of_medicine_id;
+    this.critical_rate = critical_rate;
+    this.amount = amount;
+    this.price = price;
+    this.manufacture_date = manufacture_date;
+    this.expiration_term = expiration_term;
+  }
 
   public Long getId() {
     return id;

@@ -1,10 +1,20 @@
 package com.yesipchuk.demo.modelJDBC;
 
-public class Dates_of_ordering_and_receiving {
+import java.sql.Date;
+
+public class DatesOfOrderingAndReceiving {
   private Long id;
   private java.sql.Date date_of_ordering;
   private java.sql.Date date_of_receiving;
   private Long order_status_id;
+
+  public DatesOfOrderingAndReceiving(Long id, Date date_of_ordering,
+                                     Date date_of_receiving, Long order_status_id) {
+    this.id = id;
+    this.date_of_ordering = date_of_ordering;
+    this.date_of_receiving = date_of_receiving;
+    this.order_status_id = order_status_id;
+  }
 
   public Long getId() {
     return id;

@@ -5,7 +5,13 @@ public class Buyer {
   private String pib;
   private Long age;
 
-  public Long getId() {
+    public Buyer(Long id, String pib, Long age) {
+        this.id = id;
+        this.pib = pib;
+        this.age = age;
+    }
+
+    public Long getId() {
     return id;
   }
 

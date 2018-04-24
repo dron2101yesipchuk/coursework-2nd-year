@@ -1,10 +1,18 @@
 package com.yesipchuk.demo.modelJDBC;
 
-public class Type_of_medicine {
+public class TypeOfMedicine {
   private Long id;
   private String name_of_type;
   private Long general_type_of_medicine_id;
   private Long type_of_production_id;
+
+  public TypeOfMedicine(Long id, String name_of_type,
+                        Long general_type_of_medicine_id, Long type_of_production_id) {
+    this.id = id;
+    this.name_of_type = name_of_type;
+    this.general_type_of_medicine_id = general_type_of_medicine_id;
+    this.type_of_production_id = type_of_production_id;
+  }
 
   public Long getId() {
     return id;

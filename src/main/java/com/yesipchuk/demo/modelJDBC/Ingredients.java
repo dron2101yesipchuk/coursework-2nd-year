@@ -7,6 +7,14 @@ public class Ingredients {
   private Long amount;
   private Double price;
 
+  public Ingredients(Long id, String name, Long critical_rate, Long amount, Double price) {
+    this.id = id;
+    this.name = name;
+    this.critical_rate = critical_rate;
+    this.amount = amount;
+    this.price = price;
+  }
+
   public Long getId() {
     return id;
   }
