@@ -1,11 +1,12 @@
 package com.yesipchuk.demo.controller;
 
-import com.yesipchuk.demo.model.TypeOfMedicineHasTypeOfUsing;
+import com.yesipchuk.demo.modelJDBC.TypeOfMedicineHasTypeOfUsing;
 import com.yesipchuk.demo.service.typeOfMedicineHasTypeOfUsing.impls.TypeOfMedicineHasTypeOfUsingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @RestController
@@ -15,7 +16,7 @@ public class TypeOfMedicineHasTypeOfUsingController {
     TypeOfMedicineHasTypeOfUsingService typeOfMedicineHasTypeOfUsingService;
 
     @RequestMapping("/type_production_has_type_using")
-    public List<TypeOfMedicineHasTypeOfUsing> showBuyers(){
+    public List<TypeOfMedicineHasTypeOfUsing> showTypeOfMedicineHasTypeOfUsing() throws SQLException {
         return typeOfMedicineHasTypeOfUsingService.getAll();
     }
 }

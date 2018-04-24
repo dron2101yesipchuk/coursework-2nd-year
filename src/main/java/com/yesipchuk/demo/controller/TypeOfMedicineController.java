@@ -1,11 +1,12 @@
 package com.yesipchuk.demo.controller;
 
-import com.yesipchuk.demo.model.TypeOfMedicine;
+import com.yesipchuk.demo.modelJDBC.TypeOfMedicine;
 import com.yesipchuk.demo.service.typeOfMedicine.impls.TypeOfMedicineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @RestController
@@ -15,7 +16,7 @@ public class TypeOfMedicineController {
     TypeOfMedicineService typeOfMedicineService;
 
     @RequestMapping("/type/medicine")
-    public List<TypeOfMedicine> showBuyers(){
+    public List<TypeOfMedicine> showTypeOfMedicine() throws SQLException {
         return typeOfMedicineService.getAll();
     }
 }

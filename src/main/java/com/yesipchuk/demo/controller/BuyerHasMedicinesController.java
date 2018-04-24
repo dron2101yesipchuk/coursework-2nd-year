@@ -16,7 +16,7 @@ public class BuyerHasMedicinesController {
     BuyerHasMedicinesService buyerHasMedicinesService;
 
     @RequestMapping("/buyer_has_medicines")
-    public List<BuyerHasMedicines> showBuyers() throws SQLException {
+    public List<BuyerHasMedicines> showBuyerHasMedicines() throws SQLException {
         return buyerHasMedicinesService.getAll();
     }
 }
