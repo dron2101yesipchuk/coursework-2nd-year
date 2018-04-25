@@ -22,6 +22,7 @@
                             <th>ПІБ</th>
                             <th>Вік</th>
                             <th><button type="button" class="btn btn-success">Add</button></th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -32,7 +33,10 @@
                             <td>{{item.pib}}</td>
                             <td>{{item.age}}</td>
                             <td><button type="button" class="btn btn-warning">Update</button>
-                                <button type="button" class="btn btn-danger">Delete</button></td>
+                                <button type="button" class="btn btn-danger"
+                                        ng-click="ctrl.del_buyer(item.id)"
+                                >Delete</button>
+                            </td>
 
                         </tr>
 

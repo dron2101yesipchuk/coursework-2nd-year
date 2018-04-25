@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface IGeneralTypeOfMedicinesService {
     public List<GeneralTypeOfMedicine> getAll() throws SQLException;
+    public GeneralTypeOfMedicine deleteGeneralType(int id) throws SQLException;
 }

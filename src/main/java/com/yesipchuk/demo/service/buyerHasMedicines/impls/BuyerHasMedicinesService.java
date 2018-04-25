@@ -19,4 +19,9 @@ public class BuyerHasMedicinesService implements IBuyerHasMedicinesService{
     public List<BuyersHasMedicines> getAll() throws SQLException {
         return buyerHasMedicinesDAO.getAll();
     }
+
+    @Override
+    public BuyersHasMedicines deleteBuyerHasMedicines(int id) throws SQLException {
+        return buyerHasMedicinesDAO.deleteBuyerHasMedicines(id);
+    }
 }

@@ -8,6 +8,7 @@ import com.yesipchuk.demo.model.TypeOfProduction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -35,5 +36,30 @@ public class TypeOfMedicineDAOFakeImpl implements ITypeOfMedicinesDao {
                             resultSet.getString("type_of_production.type_of_production"))));
         }
         return list;
+    }
+
+    @Override
+    public TypeOfMedicine deleteTypeOfMedicine(int id) throws SQLException {
+        List<TypeOfMedicine> list = new ArrayList<>();
+        ResultSet resultSet;
+        resultSet = dataStorage.executeQuery("SELECT * FROM drugstore.type_of_medicine\n" +
+                "JOIN general_type_of_medicine ON general_type_of_medicine.id " +
+                "= type_of_medicine.general_type_of_medicine_id\n" +
+                "JOIN type_of_production ON type_of_production.id = type_of_medicine.type_of_production_id" +
+                " where type_of_medicine.id= " + id + " order by type_of_medicine.id");
+        while (resultSet.next()){
+            list.add(new TypeOfMedicine(resultSet.getInt("type_of_medicine.id"),
+                    resultSet.getString("type_of_medicine.name_of_type"),
+                    new GeneralTypeOfMedicine(resultSet.getInt("general_type_of_medicine.id"),
+                            resultSet.getString("general_type_of_medicine.name_of_general_type")),
+                    new TypeOfProduction(resultSet.getInt("type_of_production.id"),
+                            resultSet.getString("type_of_production.type_of_production"))));
+        }
+        String sql = "DELETE FROM type_of_medicine WHERE id=?";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setInt(1, id);
+        int rowsDeleted = statement.executeUpdate();
+
+        return list.get(0);
     }
 }

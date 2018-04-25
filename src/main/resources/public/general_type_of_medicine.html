@@ -7,6 +7,7 @@
 
 </head>
 <body ng-app = "demo">
+
 <div class="container" style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" >
     <div class="row">
         <div class="col-md12">
@@ -30,17 +31,15 @@
                             <td>{{item.id}}</td>
                             <td>{{item.nameOfGeneralType}}</td>
                             <td><button type="button" class="btn btn-warning">Update</button>
-                                <button type="button" class="btn btn-danger">Delete</button></td>
+                                <button type="button" class="btn btn-danger"
+                                        ng-click="ctrl.del_general_types(item.id)"
+                                        >Delete</button></td>
 
                         </tr>
 
                         </tbody>
 
                     </table>
-
-
-
-
 
                 </div>
             </div>

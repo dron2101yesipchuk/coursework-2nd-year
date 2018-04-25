@@ -19,4 +19,9 @@ public class DatesOfOrderingAndReceivingService implements IDatesOfOrderingAndRe
     public List<DatesOfOrderingAndReceiving> getAll() throws SQLException {
         return datesOfOrderingAndReceivingDAO.getAll();
     }
+
+    @Override
+    public DatesOfOrderingAndReceiving deleteDate(int id) throws SQLException {
+        return datesOfOrderingAndReceivingDAO.deleteDate(id);
+    }
 }

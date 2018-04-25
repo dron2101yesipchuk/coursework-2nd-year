@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface IBuyerService {
     public List<Buyer> getAll() throws SQLException;
+    public Buyer deleteBuyer(int id) throws SQLException;
+    public Buyer addBuyer(Buyer buyer) throws SQLException;
 }

@@ -19,4 +19,9 @@ public class MedicineHasIngredientsService implements IMedicineHasIngredientsSer
     public List<MedicineHasIngredients> getAll() throws SQLException {
         return medicineHasIngredientsDAO.getAll();
     }
+
+    @Override
+    public MedicineHasIngredients deleteMedicineHasIngredients(int id) throws SQLException {
+        return medicineHasIngredientsDAO.deleteMedicineHasIngredients(id);
+    }
 }

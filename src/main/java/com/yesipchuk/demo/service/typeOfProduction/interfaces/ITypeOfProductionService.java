@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ITypeOfProductionService {
     public List<TypeOfProduction> getAll() throws SQLException;
+    public TypeOfProduction deleteTypeOfPrduction(int id) throws SQLException;
 }

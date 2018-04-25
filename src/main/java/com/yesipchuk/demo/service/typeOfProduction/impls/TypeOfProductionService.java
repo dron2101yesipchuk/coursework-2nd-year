@@ -19,4 +19,9 @@ public class TypeOfProductionService implements ITypeOfProductionService{
     public List<TypeOfProduction> getAll() throws SQLException {
         return typeOfProductionDAO.getAll();
     }
+
+    @Override
+    public TypeOfProduction deleteTypeOfPrduction(int id) throws SQLException {
+        return typeOfProductionDAO.deleteTypeOfProduction(id);
+    }
 }

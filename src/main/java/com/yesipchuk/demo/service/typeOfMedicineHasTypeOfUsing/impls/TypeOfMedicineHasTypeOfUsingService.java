@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Service
-public class TypeOfMedicineHasTypeOfUsingService implements ITypeOfMedicineHasTypeOfUsingService{
+public class  TypeOfMedicineHasTypeOfUsingService implements ITypeOfMedicineHasTypeOfUsingService{
 
     @Autowired
     TypeOfMedicineHasTypeOfUsingDAOFakeImpl typeOfMedicineHasTypeOfUsingDAO;
@@ -18,5 +18,10 @@ public class TypeOfMedicineHasTypeOfUsingService implements ITypeOfMedicineHasTy
     @Override
     public List<TypeOfMedicineHasTypeOfUsing> getAll() throws SQLException {
         return typeOfMedicineHasTypeOfUsingDAO.getAll();
+    }
+
+    @Override
+    public TypeOfMedicineHasTypeOfUsing deleteTypeOfMedicineHasTypeOfUsing(int id) throws SQLException {
+        return typeOfMedicineHasTypeOfUsingDAO.deleteTypeOfMedicinesHasTypeOfUsing(id);
     }
 }

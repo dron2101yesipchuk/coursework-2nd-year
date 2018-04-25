@@ -1,6 +1,7 @@
 package com.yesipchuk.demo.model;
 
 public class MedicineHasIngredients {
+    private Integer id;
     private Medicine medicine;
     private Ingredients ingredients;
     private Integer amountOfIngredients;
@@ -8,11 +9,20 @@ public class MedicineHasIngredients {
     public MedicineHasIngredients() {
     }
 
-    public MedicineHasIngredients(Medicine medicine, Ingredients ingredients,
+    public MedicineHasIngredients(Integer id, Medicine medicine, Ingredients ingredients,
                                   Integer amountOfIngredients) {
+        this.id = id;
         this.medicine = medicine;
         this.ingredients = ingredients;
         this.amountOfIngredients = amountOfIngredients;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Medicine getMedicine() {

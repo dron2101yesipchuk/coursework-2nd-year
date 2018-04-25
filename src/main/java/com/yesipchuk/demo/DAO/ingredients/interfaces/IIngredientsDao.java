@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface IIngredientsDao {
     public List<Ingredients> getAll() throws SQLException;
+    public Ingredients deleteIngredients(int id) throws SQLException;
 }

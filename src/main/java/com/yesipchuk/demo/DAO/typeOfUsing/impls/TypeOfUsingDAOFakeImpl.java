@@ -6,6 +6,7 @@ import com.yesipchuk.demo.model.TypeOfUsing;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -27,5 +28,22 @@ public class TypeOfUsingDAOFakeImpl implements ITypeOfUsingDao {
                     resultSet.getString("type_of_using.type_of_using")));
         }
         return list;
+    }
+
+    @Override
+    public TypeOfUsing deleteTypeOfUsing(int id) throws SQLException {
+        List<TypeOfUsing> list = new ArrayList<>();
+        ResultSet resultSet;
+        resultSet = dataStorage.executeQuery("SELECT * FROM type_of_using where id="+id);
+        while (resultSet.next()){
+            list.add(new TypeOfUsing(resultSet.getInt("type_of_using.id"),
+                    resultSet.getString("type_of_using.type_of_using")));
+        }
+        String sql = "DELETE FROM type_of_using WHERE id=?";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setInt(1, id);
+        int rowsDeleted = statement.executeUpdate();
+
+        return list.get(0);
     }
 }

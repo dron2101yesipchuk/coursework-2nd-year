@@ -19,4 +19,9 @@ public class TypeOfUsingService implements ITypeOfUsingService{
     public List<TypeOfUsing> getAll() throws SQLException {
         return typeOfUsingDAO.getAll();
     }
+
+    @Override
+    public TypeOfUsing deleteTypeOfUsing(int id) throws SQLException {
+        return typeOfUsingDAO.deleteTypeOfUsing(id);
+    }
 }

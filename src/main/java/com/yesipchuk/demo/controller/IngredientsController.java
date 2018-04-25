@@ -4,6 +4,7 @@ import com.yesipchuk.demo.model.Ingredients;
 import com.yesipchuk.demo.service.ingredients.impls.IngredientsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.SQLException;
@@ -18,5 +19,10 @@ public class IngredientsController {
     @RequestMapping("/ingredients")
     public List<Ingredients> showIngredients() throws SQLException {
         return ingredientsService.getAll();
+    }
+
+    @RequestMapping("/ingredients/del")
+    public Ingredients deleteIngredients(@RequestParam int id) throws SQLException {
+        return ingredientsService.deleteIngredients(id);
     }
 }

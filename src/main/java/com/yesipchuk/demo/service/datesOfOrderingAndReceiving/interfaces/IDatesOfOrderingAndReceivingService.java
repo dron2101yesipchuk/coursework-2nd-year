@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface IDatesOfOrderingAndReceivingService {
     public List<DatesOfOrderingAndReceiving> getAll() throws SQLException;
+    public DatesOfOrderingAndReceiving deleteDate(int id) throws SQLException;
 }

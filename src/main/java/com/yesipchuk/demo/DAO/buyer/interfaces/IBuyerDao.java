@@ -7,4 +7,7 @@ import java.util.List;
 
 public interface IBuyerDao {
     public List<Buyer> getAll() throws SQLException;
+    public Buyer deleteBuyer(int id) throws SQLException;
+    public Buyer addBuyer(Buyer buyer) throws SQLException;
+
 }

@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface IMedicineHasIngredientsService {
     public List<MedicineHasIngredients> getAll() throws SQLException;
+    public MedicineHasIngredients deleteMedicineHasIngredients(int id) throws SQLException;
 }

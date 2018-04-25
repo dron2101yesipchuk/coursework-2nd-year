@@ -19,4 +19,9 @@ public class IngredientsService implements IIngredientsService{
     public List<Ingredients> getAll() throws SQLException {
         return ingredientsDAO.getAll();
     }
+
+    @Override
+    public Ingredients deleteIngredients(int id) throws SQLException {
+        return ingredientsDAO.deleteIngredients(id);
+    }
 }

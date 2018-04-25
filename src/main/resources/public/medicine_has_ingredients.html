@@ -18,6 +18,7 @@
                         <thead>
                         <tr>
 
+                            <th>id</th>
                             <th>id медикаменту</th>
                             <th>id інгредієнту</th>
                             <th>Кількість інгредіенту</th>
@@ -29,11 +30,14 @@
 
                         <tr ng-repeat = "item in medicinesHasIngredients">
 
+                            <td>{{item.id}}</td>
                             <td>{{item.medicine.id}}</td>
                             <td>{{item.ingredients.id}}</td>
                             <td>{{item.amountOfIngredients}}</td>
                             <td><button type="button" class="btn btn-warning">Update</button>
-                                <button type="button" class="btn btn-danger">Delete</button></td>
+                                <button type="button" class="btn btn-danger"
+                                        ng-click="ctrl.del_medicine_has_ingredients(item.id)"
+                                >Delete</button></td>
 
                         </tr>
 

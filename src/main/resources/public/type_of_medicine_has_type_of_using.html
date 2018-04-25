@@ -17,6 +17,7 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
+                            <th>id</th>
                             <th>id Тип медикаменту</th>
                             <th>id Тип використання</th>
                             <th><button type="button" class="btn btn-success">Add</button></th>
@@ -27,10 +28,13 @@
 
                         <tr ng-repeat = "item in typeOfProductionHasTypeOfUsing">
 
+                            <td>{{item.id}}</td>
                             <td>{{item.typeOfMedicine.id}}</td>
                             <td>{{item.typeOfUsing.id}}</td>
                             <td><button type="button" class="btn btn-warning">Update</button>
-                                <button type="button" class="btn btn-danger">Delete</button></td>
+                                <button type="button" class="btn btn-danger"
+                                        ng-click="ctrl.del_type_of_medicine_has_type_of_using(item.id)"
+                                >Delete</button></td>
 
                         </tr>
 

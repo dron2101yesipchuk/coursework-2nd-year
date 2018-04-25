@@ -4,6 +4,7 @@ import com.yesipchuk.demo.model.TypeOfMedicine;
 import com.yesipchuk.demo.service.typeOfMedicine.impls.TypeOfMedicineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.SQLException;
@@ -18,5 +19,10 @@ public class TypeOfMedicineController {
     @RequestMapping("/type/medicine")
     public List<TypeOfMedicine> showTypeOfMedicine() throws SQLException {
         return typeOfMedicineService.getAll();
+    }
+
+    @RequestMapping("/type/medicine/del")
+    public TypeOfMedicine deleteTypeOfMedicine(@RequestParam int id) throws SQLException {
+        return typeOfMedicineService.deleteTypeOfMedicine(id);
     }
 }

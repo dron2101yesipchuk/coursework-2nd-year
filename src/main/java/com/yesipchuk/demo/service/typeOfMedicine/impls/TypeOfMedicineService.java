@@ -19,4 +19,9 @@ public class TypeOfMedicineService implements ITypeOfMedicineService{
     public List<TypeOfMedicine> getAll() throws SQLException {
         return typeOfMedicineDAO.getAll();
     }
+
+    @Override
+    public TypeOfMedicine deleteTypeOfMedicine(int id) throws SQLException {
+        return typeOfMedicineDAO.deleteTypeOfMedicine(id);
+    }
 }

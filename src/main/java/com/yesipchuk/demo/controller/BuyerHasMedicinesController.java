@@ -4,6 +4,7 @@ import com.yesipchuk.demo.model.BuyersHasMedicines;
 import com.yesipchuk.demo.service.buyerHasMedicines.impls.BuyerHasMedicinesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.SQLException;
@@ -18,5 +19,10 @@ public class BuyerHasMedicinesController {
     @RequestMapping("/buyer_has_medicines")
     public List<BuyersHasMedicines> showBuyerHasMedicines() throws SQLException {
         return buyerHasMedicinesService.getAll();
+    }
+
+    @RequestMapping("/buyer_has_medicines/del")
+    public BuyersHasMedicines deleteBuyerHasMedicines(@RequestParam int id) throws SQLException {
+        return buyerHasMedicinesService.deleteBuyerHasMedicines(id);
     }
 }

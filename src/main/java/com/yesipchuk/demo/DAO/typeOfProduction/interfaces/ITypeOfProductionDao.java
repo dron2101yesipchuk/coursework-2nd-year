@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ITypeOfProductionDao {
     public List<TypeOfProduction> getAll() throws SQLException;
+    public TypeOfProduction deleteTypeOfProduction(int id) throws SQLException;
 }

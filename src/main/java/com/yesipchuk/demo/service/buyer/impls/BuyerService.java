@@ -19,4 +19,14 @@ public class BuyerService implements IBuyerService{
     public List<Buyer> getAll() throws SQLException {
         return buyerDao.getAll();
     }
+
+    @Override
+    public Buyer deleteBuyer(int id) throws SQLException {
+        return buyerDao.deleteBuyer(id);
+    }
+
+    @Override
+    public Buyer addBuyer(Buyer buyer) throws SQLException {
+        return buyerDao.addBuyer(buyer);
+    }
 }

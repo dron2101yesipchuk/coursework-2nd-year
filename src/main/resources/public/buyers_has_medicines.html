@@ -18,6 +18,7 @@
                         <thead>
                         <tr>
 
+                            <th>id</th>
                             <th>id Покупця</th>
                             <th>id Медикаменту</th>
                             <th>id Дати замовлення і отримання</th>
@@ -32,6 +33,7 @@
 
                         <tr ng-repeat = "item in buyer_has_medicines">
 
+                            <td>{{item.id}}</td>
                             <td>{{item.buyer.id}}</td>
                             <td>{{item.medicine.id}}</td>
                             <td>{{item.datesOfOrderingAndReceiving.id}}</td>
@@ -39,7 +41,9 @@
                             <td>{{item.diagnosis}}</td>
                             <td>{{item.amountOfMedicine}}</td>
                             <td><button type="button" class="btn btn-warning">Update</button>
-                                <button type="button" class="btn btn-danger">Delete</button></td>
+                                <button type="button" class="btn btn-danger"
+                                        ng-click="ctrl.del_buyer_has_medicines(item.id)"
+                                >Delete</button></td>
 
                         </tr>
 

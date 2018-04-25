@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ITypeOfMedicinesDao {
     public List<TypeOfMedicine> getAll() throws SQLException;
+    public TypeOfMedicine deleteTypeOfMedicine(int id) throws SQLException;
 }

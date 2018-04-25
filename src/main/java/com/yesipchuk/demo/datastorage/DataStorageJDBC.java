@@ -11,8 +11,8 @@ public class DataStorageJDBC {
     private static final String login = "root";
     private static final String password = "Dronik210199";
 
-    Connection con;
-    Statement statement;
+    private Connection con;
+    private Statement statement;
 
     @PostConstruct
     public void init() throws SQLException {

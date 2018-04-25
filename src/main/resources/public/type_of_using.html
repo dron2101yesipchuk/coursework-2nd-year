@@ -31,7 +31,9 @@
                             <td>{{item.id}}</td>
                             <td>{{item.nameOfType}}</td>
                             <td><button type="button" class="btn btn-warning">Update</button>
-                                <button type="button" class="btn btn-danger">Delete</button></td>
+                                <button type="button" class="btn btn-danger"
+                                        ng-click="ctrl.del_type_of_using(item.id)"
+                                >Delete</button></td>
 
                         </tr>
 

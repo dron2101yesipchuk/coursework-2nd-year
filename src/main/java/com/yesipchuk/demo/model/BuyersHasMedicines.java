@@ -1,6 +1,7 @@
 package com.yesipchuk.demo.model;
 
 public class BuyersHasMedicines {
+    private Integer id;
     private Buyer buyer;
     private Medicine medicine;
     private DatesOfOrderingAndReceiving datesOfOrderingAndReceiving;
@@ -11,15 +12,24 @@ public class BuyersHasMedicines {
     public BuyersHasMedicines() {
     }
 
-    public BuyersHasMedicines(Buyer buyer, Medicine medicine,
+    public BuyersHasMedicines(Integer id, Buyer buyer, Medicine medicine,
                               DatesOfOrderingAndReceiving datesOfOrderingAndReceiving,
                               String doctorPIB, String diagnosis, Integer amountOfMedicine) {
+        this.id = id;
         this.buyer = buyer;
         this.medicine = medicine;
         this.datesOfOrderingAndReceiving = datesOfOrderingAndReceiving;
         this.doctorPIB = doctorPIB;
         this.diagnosis = diagnosis;
         this.amountOfMedicine = amountOfMedicine;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Buyer getBuyer() {
