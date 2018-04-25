@@ -2,7 +2,7 @@ package com.yesipchuk.demo.DAO.typeOfProduction.impls;
 
 import com.yesipchuk.demo.DAO.typeOfProduction.interfaces.ITypeOfProductionDao;
 import com.yesipchuk.demo.datastorage.DataStorageJDBC;
-import com.yesipchuk.demo.modelJDBC.TypeOfProduction;
+import com.yesipchuk.demo.model.TypeOfProduction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -23,8 +23,8 @@ public class TypeOfProductionDAOFakeImpl implements ITypeOfProductionDao {
         ResultSet resultSet;
         resultSet = dataStorage.executeQuery("SELECT * FROM type_of_production");
         while(resultSet.next()){
-            list.add(new TypeOfProduction((long)resultSet.getInt("id"),
-                    resultSet.getString("type_of_production")));
+            list.add(new TypeOfProduction(resultSet.getInt("type_of_production.id"),
+                    resultSet.getString("type_of_production.type_of_production")));
         }
         return list;
     }

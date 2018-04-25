@@ -1,6 +1,6 @@
 package com.yesipchuk.demo.DAO.generalTypeOfMedicine.interfaces;
 
-import com.yesipchuk.demo.modelJDBC.GeneralTypeOfMedicine;
+import com.yesipchuk.demo.model.GeneralTypeOfMedicine;
 
 import java.sql.SQLException;
 import java.util.List;

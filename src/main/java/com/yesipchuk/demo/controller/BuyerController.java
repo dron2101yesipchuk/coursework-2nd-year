@@ -1,6 +1,6 @@
 package com.yesipchuk.demo.controller;
 
-import com.yesipchuk.demo.modelJDBC.Buyer;
+import com.yesipchuk.demo.model.Buyer;
 import com.yesipchuk.demo.service.buyer.impls.BuyerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

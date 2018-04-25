@@ -2,7 +2,7 @@ package com.yesipchuk.demo.DAO.typeOfUsing.impls;
 
 import com.yesipchuk.demo.DAO.typeOfUsing.interfaces.ITypeOfUsingDao;
 import com.yesipchuk.demo.datastorage.DataStorageJDBC;
-import com.yesipchuk.demo.modelJDBC.TypeOfUsing;
+import com.yesipchuk.demo.model.TypeOfUsing;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -23,8 +23,8 @@ public class TypeOfUsingDAOFakeImpl implements ITypeOfUsingDao {
         ResultSet resultSet;
         resultSet = dataStorage.executeQuery("SELECT * FROM type_of_using");
         while(resultSet.next()){
-            list.add(new TypeOfUsing((long)resultSet.getInt("id"),
-                    resultSet.getString("type_of_using")));
+            list.add(new TypeOfUsing(resultSet.getInt("type_of_using.id"),
+                    resultSet.getString("type_of_using.type_of_using")));
         }
         return list;
     }

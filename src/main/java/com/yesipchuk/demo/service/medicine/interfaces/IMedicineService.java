@@ -1,6 +1,6 @@
 package com.yesipchuk.demo.service.medicine.interfaces;
 
-import com.yesipchuk.demo.modelJDBC.Medicine;
+import com.yesipchuk.demo.model.Medicine;
 
 import java.sql.SQLException;
 import java.util.List;

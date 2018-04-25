@@ -1,6 +1,6 @@
 package com.yesipchuk.demo.controller;
 
-import com.yesipchuk.demo.modelJDBC.DatesOfOrderingAndReceiving;
+import com.yesipchuk.demo.model.DatesOfOrderingAndReceiving;
 import com.yesipchuk.demo.service.datesOfOrderingAndReceiving.impls.DatesOfOrderingAndReceivingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

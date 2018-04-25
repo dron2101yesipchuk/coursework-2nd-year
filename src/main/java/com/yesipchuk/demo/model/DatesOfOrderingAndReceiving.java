@@ -1,16 +1,18 @@
 package com.yesipchuk.demo.model;
 
+import java.sql.Date;
+
 public class DatesOfOrderingAndReceiving {
     private Integer id;
-    private String dateOfOrdering;
-    private String dateOfReceiving;
+    private Date dateOfOrdering;
+    private Date dateOfReceiving;
     private OrderStatus orderStatus;
 
     public DatesOfOrderingAndReceiving() {
     }
 
-    public DatesOfOrderingAndReceiving(Integer id, String dateOfOrdering,
-                                       String dateOfReceiving, OrderStatus orderStatus) {
+    public DatesOfOrderingAndReceiving(Integer id, Date dateOfOrdering,
+                                       Date dateOfReceiving, OrderStatus orderStatus) {
         this.id = id;
         this.dateOfOrdering = dateOfOrdering;
         this.dateOfReceiving = dateOfReceiving;
@@ -25,19 +27,19 @@ public class DatesOfOrderingAndReceiving {
         this.id = id;
     }
 
-    public String getDateOfOrdering() {
+    public Date getDateOfOrdering() {
         return dateOfOrdering;
     }
 
-    public void setDateOfOrdering(String dateOfOrdering) {
+    public void setDateOfOrdering(Date dateOfOrdering) {
         this.dateOfOrdering = dateOfOrdering;
     }
 
-    public String getDateOfReceiving() {
+    public Date getDateOfReceiving() {
         return dateOfReceiving;
     }
 
-    public void setDateOfReceiving(String dateOfReceiving) {
+    public void setDateOfReceiving(Date dateOfReceiving) {
         this.dateOfReceiving = dateOfReceiving;
     }
 

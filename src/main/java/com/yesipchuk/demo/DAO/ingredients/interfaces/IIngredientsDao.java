@@ -1,6 +1,6 @@
 package com.yesipchuk.demo.DAO.ingredients.interfaces;
 
-import com.yesipchuk.demo.modelJDBC.Ingredients;
+import com.yesipchuk.demo.model.Ingredients;
 
 import java.sql.SQLException;
 import java.util.List;

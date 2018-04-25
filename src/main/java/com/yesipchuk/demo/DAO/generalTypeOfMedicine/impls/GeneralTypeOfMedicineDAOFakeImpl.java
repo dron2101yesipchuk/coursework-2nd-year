@@ -2,7 +2,7 @@ package com.yesipchuk.demo.DAO.generalTypeOfMedicine.impls;
 
 import com.yesipchuk.demo.DAO.generalTypeOfMedicine.interfaces.IGeneralTypeOfMedicineDao;
 import com.yesipchuk.demo.datastorage.DataStorageJDBC;
-import com.yesipchuk.demo.modelJDBC.GeneralTypeOfMedicine;
+import com.yesipchuk.demo.model.GeneralTypeOfMedicine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -23,7 +23,7 @@ public class GeneralTypeOfMedicineDAOFakeImpl implements IGeneralTypeOfMedicineD
         ResultSet resultSet;
         resultSet = dataStorage.executeQuery("SELECT * FROM general_type_of_medicine");
         while(resultSet.next()){
-            list.add(new GeneralTypeOfMedicine((long)resultSet.getInt("id"),
+            list.add(new GeneralTypeOfMedicine(resultSet.getInt("id"),
                     resultSet.getString("name_of_general_type")));
         }
         return list;

@@ -1,6 +1,6 @@
 package com.yesipchuk.demo.DAO.typeOfMedicineHasTypeOfUsing.interfaces;
 
-import com.yesipchuk.demo.modelJDBC.TypeOfMedicineHasTypeOfUsing;
+import com.yesipchuk.demo.model.TypeOfMedicineHasTypeOfUsing;
 
 import java.sql.SQLException;
 import java.util.List;

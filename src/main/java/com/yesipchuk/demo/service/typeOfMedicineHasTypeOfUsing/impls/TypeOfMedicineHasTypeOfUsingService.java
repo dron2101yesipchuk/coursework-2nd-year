@@ -1,7 +1,7 @@
 package com.yesipchuk.demo.service.typeOfMedicineHasTypeOfUsing.impls;
 
 import com.yesipchuk.demo.DAO.typeOfMedicineHasTypeOfUsing.impls.TypeOfMedicineHasTypeOfUsingDAOFakeImpl;
-import com.yesipchuk.demo.modelJDBC.TypeOfMedicineHasTypeOfUsing;
+import com.yesipchuk.demo.model.TypeOfMedicineHasTypeOfUsing;
 import com.yesipchuk.demo.service.typeOfMedicineHasTypeOfUsing.interfaces.ITypeOfMedicineHasTypeOfUsingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

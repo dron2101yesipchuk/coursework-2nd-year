@@ -2,7 +2,7 @@ package com.yesipchuk.demo.DAO.buyer.impls;
 
 import com.yesipchuk.demo.DAO.buyer.interfaces.IBuyerDao;
 import com.yesipchuk.demo.datastorage.DataStorageJDBC;
-import com.yesipchuk.demo.modelJDBC.Buyer;
+import com.yesipchuk.demo.model.Buyer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -23,8 +23,8 @@ public class BuyerDAOFakeImpl implements IBuyerDao{
         ResultSet resultSet;
         resultSet = dataStorage.executeQuery("SELECT * FROM buyer");
         while(resultSet.next()){
-            list.add(new Buyer((long)resultSet.getInt("id"), resultSet.getString("PIB"),
-                    (long) resultSet.getInt("age")));
+            list.add(new Buyer(resultSet.getInt("id"), resultSet.getString("PIB"),
+                    resultSet.getInt("age")));
         }
 
         return list;

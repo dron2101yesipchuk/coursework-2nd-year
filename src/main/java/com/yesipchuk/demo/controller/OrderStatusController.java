@@ -1,6 +1,6 @@
 package com.yesipchuk.demo.controller;
 
-import com.yesipchuk.demo.modelJDBC.OrderStatus;
+import com.yesipchuk.demo.model.OrderStatus;
 import com.yesipchuk.demo.service.orderStatus.impls.OrderStatusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

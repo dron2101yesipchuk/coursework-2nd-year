@@ -32,7 +32,7 @@ public class DataStorageFake {
         return buyers;
     }
 
-    private List<OrderStatus> orderStatuses = new ArrayList<>(
+    /*private List<OrderStatus> orderStatuses = new ArrayList<>(
             Arrays.asList(
                     new OrderStatus(1,"Отриманий"),
                     new OrderStatus(2,"Очікує прибуття"),
@@ -243,5 +243,5 @@ public class DataStorageFake {
 
     public List<BuyersHasMedicines> getBuyerHasMedicines() {
         return buyersHasMedicines;
-    }
+    }*/
 }

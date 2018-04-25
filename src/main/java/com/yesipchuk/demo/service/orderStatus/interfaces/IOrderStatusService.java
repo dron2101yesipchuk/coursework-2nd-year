@@ -1,6 +1,6 @@
 package com.yesipchuk.demo.service.orderStatus.interfaces;
 
-import com.yesipchuk.demo.modelJDBC.OrderStatus;
+import com.yesipchuk.demo.model.OrderStatus;
 
 import java.util.List;
 

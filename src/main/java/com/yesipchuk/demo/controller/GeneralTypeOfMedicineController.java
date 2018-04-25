@@ -1,6 +1,6 @@
 package com.yesipchuk.demo.controller;
 
-import com.yesipchuk.demo.modelJDBC.GeneralTypeOfMedicine;
+import com.yesipchuk.demo.model.GeneralTypeOfMedicine;
 import com.yesipchuk.demo.service.generalTypeOfMedicine.impls.GeneralTypeOfMedicineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

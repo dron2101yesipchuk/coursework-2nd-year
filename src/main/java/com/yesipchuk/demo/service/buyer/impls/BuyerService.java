@@ -1,7 +1,7 @@
 package com.yesipchuk.demo.service.buyer.impls;
 
 import com.yesipchuk.demo.DAO.buyer.impls.BuyerDAOFakeImpl;
-import com.yesipchuk.demo.modelJDBC.Buyer;
+import com.yesipchuk.demo.model.Buyer;
 import com.yesipchuk.demo.service.buyer.interfaces.IBuyerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

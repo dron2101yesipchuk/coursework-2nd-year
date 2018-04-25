@@ -1,6 +1,6 @@
 package com.yesipchuk.demo.DAO.orderStatus.interfaces;
 
-import com.yesipchuk.demo.modelJDBC.OrderStatus;
+import com.yesipchuk.demo.model.OrderStatus;
 
 import java.sql.SQLException;
 import java.util.List;

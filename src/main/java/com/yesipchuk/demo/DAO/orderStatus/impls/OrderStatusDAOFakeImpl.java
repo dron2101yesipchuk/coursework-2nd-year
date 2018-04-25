@@ -2,7 +2,7 @@ package com.yesipchuk.demo.DAO.orderStatus.impls;
 
 import com.yesipchuk.demo.DAO.orderStatus.interfaces.IOrderStatusDao;
 import com.yesipchuk.demo.datastorage.DataStorageJDBC;
-import com.yesipchuk.demo.modelJDBC.OrderStatus;
+import com.yesipchuk.demo.model.OrderStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -23,7 +23,7 @@ public class OrderStatusDAOFakeImpl implements IOrderStatusDao {
         ResultSet resultSet;
         resultSet = dataStorage.executeQuery("SELECT * FROM order_status");
         while(resultSet.next()){
-            list.add(new OrderStatus((long)resultSet.getInt("id"),
+            list.add(new OrderStatus(resultSet.getInt("id"),
                     resultSet.getString("name_of_status")));
         }
         return list;

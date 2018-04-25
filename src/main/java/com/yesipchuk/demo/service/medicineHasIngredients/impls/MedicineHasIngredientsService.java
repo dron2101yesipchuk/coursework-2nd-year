@@ -1,7 +1,7 @@
 package com.yesipchuk.demo.service.medicineHasIngredients.impls;
 
 import com.yesipchuk.demo.DAO.medicineHasIngredients.impls.MedicineHasIngredientsDAOFakeImpl;
-import com.yesipchuk.demo.modelJDBC.MedicineHasIngredients;
+import com.yesipchuk.demo.model.MedicineHasIngredients;
 import com.yesipchuk.demo.service.medicineHasIngredients.interfaces.IMedicineHasIngredientsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
