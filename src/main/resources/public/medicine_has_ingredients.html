@@ -21,6 +21,8 @@
                             <th>id медикаменту</th>
                             <th>id інгредієнту</th>
                             <th>Кількість інгредіенту</th>
+                            <th><button type="button" class="btn btn-success">Add</button></th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -30,7 +32,8 @@
                             <td>{{item.medicine.id}}</td>
                             <td>{{item.ingredients.id}}</td>
                             <td>{{item.amountOfIngredients}}</td>
-
+                            <td><button type="button" class="btn btn-warning">Update</button>
+                                <button type="button" class="btn btn-danger">Delete</button></td>
 
                         </tr>
 
