@@ -24,4 +24,14 @@ public class IngredientsService implements IIngredientsService{
     public Ingredients deleteIngredients(int id) throws SQLException {
         return ingredientsDAO.deleteIngredients(id);
     }
+
+    @Override
+    public Ingredients addIngredients(Ingredients ingredients) throws SQLException {
+        return ingredientsDAO.addIngredients(ingredients);
+    }
+
+    @Override
+    public Ingredients updateIngredients(Ingredients ingredients) throws SQLException {
+        return ingredientsDAO.updateIngredients(ingredients);
+    }
 }

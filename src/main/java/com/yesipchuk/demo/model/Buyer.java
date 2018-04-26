@@ -8,7 +8,7 @@ public class Buyer {
     public Buyer() {
     }
 
-    public Buyer(int ID, String PIB, int age) {
+    public Buyer(Integer ID, String PIB, Integer age) {
         this.id = ID;
         this.PIB = PIB;
         this.age = age;

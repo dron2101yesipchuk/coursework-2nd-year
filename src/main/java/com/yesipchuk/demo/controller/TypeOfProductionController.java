@@ -23,6 +23,22 @@ public class TypeOfProductionController {
 
     @RequestMapping("/type/production/del")
     public TypeOfProduction deleteTypeOfProduction(@RequestParam int id) throws SQLException {
-        return typeOfProductionService.deleteTypeOfPrduction(id);
+        return typeOfProductionService.deleteTypeOfProduction(id);
     }
+
+    @RequestMapping("/type/production/add")
+    public TypeOfProduction addTypeOfProduction(@RequestParam int id, String nameOfType) throws SQLException {
+        TypeOfProduction typeOfProduction = new TypeOfProduction(id, nameOfType);
+
+        return typeOfProductionService.addTypeOfPrduction(typeOfProduction);
+    }
+
+    @RequestMapping("/type/production/upd")
+    public TypeOfProduction updateTypeOfProduction(@RequestParam int id, String nameOfType) throws SQLException {
+        TypeOfProduction typeOfProduction = new TypeOfProduction(id, nameOfType);
+
+        return typeOfProductionService.updateTypeOfPrduction(typeOfProduction);
+    }
+
+
 }

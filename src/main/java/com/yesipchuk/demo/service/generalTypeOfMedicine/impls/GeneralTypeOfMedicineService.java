@@ -24,4 +24,14 @@ public class GeneralTypeOfMedicineService implements IGeneralTypeOfMedicinesServ
     public GeneralTypeOfMedicine deleteGeneralType(int id) throws SQLException {
         return generalTypeOfMedicineDAO.deleteGeneralType(id);
     }
+
+    @Override
+    public GeneralTypeOfMedicine addGeneralType(GeneralTypeOfMedicine generalTypeOfMedicine) throws SQLException {
+        return generalTypeOfMedicineDAO.addGeneralType(generalTypeOfMedicine);
+    }
+
+    @Override
+    public GeneralTypeOfMedicine updateGeneralType(GeneralTypeOfMedicine generalTypeOfMedicine) throws SQLException {
+        return generalTypeOfMedicineDAO.updateGeneralType(generalTypeOfMedicine);
+    }
 }

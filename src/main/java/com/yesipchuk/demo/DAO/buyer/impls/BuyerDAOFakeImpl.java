@@ -66,4 +66,9 @@ public class BuyerDAOFakeImpl implements IBuyerDao{
         else
             return null;
     }
+
+    @Override
+    public Buyer updateBuyer(Buyer buyer) throws SQLException {
+        return null;
+    }
 }

@@ -80,4 +80,14 @@ public class TypeOfMedicineHasTypeOfUsingDAOFakeImpl implements ITypeOfMedicineH
 
         return list.get(0);
     }
+
+    @Override
+    public TypeOfMedicineHasTypeOfUsing addTypeOfMedicinesHasTypeOfUsing(TypeOfMedicineHasTypeOfUsing typeOfMedicineHasTypeOfUsing) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public TypeOfMedicineHasTypeOfUsing updateTypeOfMedicinesHasTypeOfUsing(TypeOfMedicineHasTypeOfUsing typeOfMedicineHasTypeOfUsing) throws SQLException {
+        return null;
+    }
 }

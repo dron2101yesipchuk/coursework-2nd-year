@@ -25,4 +25,20 @@ public class IngredientsController {
     public Ingredients deleteIngredients(@RequestParam int id) throws SQLException {
         return ingredientsService.deleteIngredients(id);
     }
+
+    @RequestMapping("/ingredients/add")
+    public Ingredients addIngredients(@RequestParam int id, String name, int criticalRate,
+                                      int amount, double price) throws SQLException {
+        Ingredients ingredients = new Ingredients(id, name, criticalRate, amount, price);
+        return ingredientsService.addIngredients(ingredients);
+    }
+
+    @RequestMapping("/ingredients/upd")
+    public Ingredients updateIngredients(@RequestParam int id, String name, int criticalRate,
+                                      int amount, double price) throws SQLException {
+        Ingredients ingredients = new Ingredients(id, name, criticalRate, amount, price);
+        return ingredientsService.updateIngredients(ingredients);
+    }
+
+
 }

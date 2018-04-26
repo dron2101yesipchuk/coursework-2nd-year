@@ -25,4 +25,20 @@ public class TypeOfUsingController {
     public TypeOfUsing deleteTypeOfUsing(@RequestParam int id) throws SQLException {
         return typeOfUsingService.deleteTypeOfUsing(id);
     }
+
+    @RequestMapping("/type/using/add")
+    public TypeOfUsing addTypeOfUsing(@RequestParam int id, String nameOfType) throws SQLException {
+        TypeOfUsing typeOfUsing = new TypeOfUsing(id, nameOfType);
+
+        return typeOfUsingService.addTypeOfUsing(typeOfUsing);
+    }
+
+    @RequestMapping("/type/using/upd")
+    public TypeOfUsing updateTypeOfUsing(@RequestParam int id, String nameOfType) throws SQLException {
+        TypeOfUsing typeOfUsing = new TypeOfUsing(id, nameOfType);
+
+        return typeOfUsingService.updateTypeOfUsing(typeOfUsing);
+    }
+
+
 }

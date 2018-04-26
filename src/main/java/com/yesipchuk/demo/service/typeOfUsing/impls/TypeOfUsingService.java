@@ -24,4 +24,14 @@ public class TypeOfUsingService implements ITypeOfUsingService{
     public TypeOfUsing deleteTypeOfUsing(int id) throws SQLException {
         return typeOfUsingDAO.deleteTypeOfUsing(id);
     }
+
+    @Override
+    public TypeOfUsing addTypeOfUsing(TypeOfUsing typeOfUsing) throws SQLException {
+        return typeOfUsingDAO.addTypeOfUsing(typeOfUsing);
+    }
+
+    @Override
+    public TypeOfUsing updateTypeOfUsing(TypeOfUsing typeOfUsing) throws SQLException {
+        return typeOfUsingDAO.updateTypeOfUsing(typeOfUsing);
+    }
 }

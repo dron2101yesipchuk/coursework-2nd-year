@@ -97,4 +97,14 @@ public class MedicineHasIngredientsDAOFakeImpl implements IMedicinesHasIngredien
 
         return list.get(0);
     }
+
+    @Override
+    public MedicineHasIngredients addMedicineHasIngredients(MedicineHasIngredients medicineHasIngredients) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public MedicineHasIngredients updateMedicineHasIngredients(MedicineHasIngredients medicineHasIngredients) throws SQLException {
+        return null;
+    }
 }

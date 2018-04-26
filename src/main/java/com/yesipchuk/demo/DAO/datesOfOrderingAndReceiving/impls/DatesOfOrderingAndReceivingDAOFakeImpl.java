@@ -61,4 +61,14 @@ public class DatesOfOrderingAndReceivingDAOFakeImpl implements IDatesOfOrderingA
 
         return list.get(0);
     }
+
+    @Override
+    public DatesOfOrderingAndReceiving addDate(DatesOfOrderingAndReceiving dates) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public DatesOfOrderingAndReceiving updateDate(DatesOfOrderingAndReceiving dates) throws SQLException {
+        return null;
+    }
 }

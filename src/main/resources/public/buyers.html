@@ -21,7 +21,10 @@
                             <th>id</th>
                             <th>ПІБ</th>
                             <th>Вік</th>
-                            <th><button type="button" class="btn btn-success">Add</button></th>
+                            <th><button type="button" class="btn btn-success"
+                                        data-toggle="modal" data-target="#addModal"
+                            >Add</button>
+                            </th>
 
                         </tr>
                         </thead>
@@ -53,6 +56,37 @@
         </div>
     </div>
 
+    <!--insert buyer-->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addModalLabel">Додавання запису</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрити">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    Введіть Id Покупця
+                    <input type="text" id="buyerId">
+                    <br><br>
+                    Введіть ПІБ покупця
+                    <br>
+                    <input type="text" id="buyerPIB">
+                    <br>
+                    Введіть вік покупця
+                    <br>
+                    <input type="text" id="buyerAge">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" style="cursor:pointer" data-dismiss="modal">Закрити</button>
+                    <button type="button" style="cursor:pointer"  ng-click="ctrl.insert_kind_of_sport()">Додати</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 

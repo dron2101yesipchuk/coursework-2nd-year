@@ -24,4 +24,14 @@ public class BuyerHasMedicinesService implements IBuyerHasMedicinesService{
     public BuyersHasMedicines deleteBuyerHasMedicines(int id) throws SQLException {
         return buyerHasMedicinesDAO.deleteBuyerHasMedicines(id);
     }
+
+    @Override
+    public BuyersHasMedicines addBuyerHasMedicines(BuyersHasMedicines buyersHasMedicines) throws SQLException {
+        return buyerHasMedicinesDAO.addBuyerHasMedicines(buyersHasMedicines);
+    }
+
+    @Override
+    public BuyersHasMedicines updateBuyerHasMedicines(BuyersHasMedicines buyersHasMedicines) throws SQLException {
+        return buyerHasMedicinesDAO.addBuyerHasMedicines(buyersHasMedicines);
+    }
 }

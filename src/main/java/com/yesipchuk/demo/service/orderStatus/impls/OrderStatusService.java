@@ -24,4 +24,14 @@ public class OrderStatusService implements IOrderStatusService{
     public OrderStatus deleteOrderStatus(int id) throws SQLException {
         return orderStatusDAO.deleteOrderStatus(id);
     }
+
+    @Override
+    public OrderStatus addOrderStatus(OrderStatus orderStatus) throws SQLException {
+        return orderStatusDAO.addOrderStatus(orderStatus);
+    }
+
+    @Override
+    public OrderStatus updateOrderStatus(OrderStatus orderStatus) throws SQLException {
+        return orderStatusDAO.updateOrderStatus(orderStatus);
+    }
 }

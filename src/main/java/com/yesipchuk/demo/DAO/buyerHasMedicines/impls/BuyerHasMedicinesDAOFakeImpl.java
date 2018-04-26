@@ -117,4 +117,14 @@ public class BuyerHasMedicinesDAOFakeImpl implements IBuyerHasMedicinesDao {
 
         return list.get(0);
     }
+
+    @Override
+    public BuyersHasMedicines addBuyerHasMedicines(BuyersHasMedicines buyersHasMedicines) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public BuyersHasMedicines updateBuyerHasMedicines(BuyersHasMedicines buyersHasMedicines) throws SQLException {
+        return null;
+    }
 }

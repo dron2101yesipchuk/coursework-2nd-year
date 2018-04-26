@@ -24,4 +24,14 @@ public class MedicineHasIngredientsService implements IMedicineHasIngredientsSer
     public MedicineHasIngredients deleteMedicineHasIngredients(int id) throws SQLException {
         return medicineHasIngredientsDAO.deleteMedicineHasIngredients(id);
     }
+
+    @Override
+    public MedicineHasIngredients addMedicineHasIngredients(MedicineHasIngredients medicineHasIngredients) throws SQLException {
+        return medicineHasIngredientsDAO.addMedicineHasIngredients(medicineHasIngredients);
+    }
+
+    @Override
+    public MedicineHasIngredients updateMedicineHasIngredients(MedicineHasIngredients medicineHasIngredients) throws SQLException {
+        return medicineHasIngredientsDAO.updateMedicineHasIngredients(medicineHasIngredients);
+    }
 }

@@ -25,4 +25,18 @@ public class GeneralTypeOfMedicineController {
     public GeneralTypeOfMedicine deleteGeneralType(@RequestParam int id) throws SQLException{
         return generalTypeOfMedicineService.deleteGeneralType(id);
     }
+
+    @RequestMapping("/general_types/add")
+    public GeneralTypeOfMedicine addGeneralType(@RequestParam int id, String generalType) throws SQLException{
+        GeneralTypeOfMedicine generalTypeOfMedicine = new GeneralTypeOfMedicine(id, generalType);
+        return generalTypeOfMedicineService.addGeneralType(generalTypeOfMedicine);
+    }
+
+    @RequestMapping("/general_types/upd")
+    public GeneralTypeOfMedicine updateGeneralType(@RequestParam int id, String generalType) throws SQLException{
+        GeneralTypeOfMedicine generalTypeOfMedicine = new GeneralTypeOfMedicine(id, generalType);
+        return generalTypeOfMedicineService.updateGeneralType(generalTypeOfMedicine);
+    }
+
+
 }

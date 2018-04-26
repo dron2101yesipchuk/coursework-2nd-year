@@ -46,4 +46,14 @@ public class TypeOfProductionDAOFakeImpl implements ITypeOfProductionDao {
 
         return list.get(0);
     }
+
+    @Override
+    public TypeOfProduction addTypeOfProduction(TypeOfProduction typeOfProduction) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public TypeOfProduction updateTypeOfProduction(TypeOfProduction typeOfProduction) throws SQLException {
+        return null;
+    }
 }

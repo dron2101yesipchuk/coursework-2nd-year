@@ -24,4 +24,14 @@ public class TypeOfMedicineService implements ITypeOfMedicineService{
     public TypeOfMedicine deleteTypeOfMedicine(int id) throws SQLException {
         return typeOfMedicineDAO.deleteTypeOfMedicine(id);
     }
+
+    @Override
+    public TypeOfMedicine addTypeOfMedicine(TypeOfMedicine typeOfMedicine) throws SQLException {
+        return typeOfMedicineDAO.addTypeOfMedicine(typeOfMedicine);
+    }
+
+    @Override
+    public TypeOfMedicine updateTypeOfMedicine(TypeOfMedicine typeOfMedicine) throws SQLException {
+        return typeOfMedicineDAO.updateTypeOfMedicine(typeOfMedicine);
+    }
 }

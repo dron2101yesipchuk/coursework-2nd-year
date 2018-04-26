@@ -9,4 +9,5 @@ public interface IBuyerService {
     public List<Buyer> getAll() throws SQLException;
     public Buyer deleteBuyer(int id) throws SQLException;
     public Buyer addBuyer(Buyer buyer) throws SQLException;
+    public Buyer updateBuyer(Buyer buyer) throws SQLException;
 }

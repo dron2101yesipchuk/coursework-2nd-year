@@ -46,4 +46,14 @@ public class GeneralTypeOfMedicineDAOFakeImpl implements IGeneralTypeOfMedicineD
 
         return list.get(0);
     }
+
+    @Override
+    public GeneralTypeOfMedicine addGeneralType(GeneralTypeOfMedicine generalType) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public GeneralTypeOfMedicine updateGeneralType(GeneralTypeOfMedicine generalType) throws SQLException {
+        return null;
+    }
 }

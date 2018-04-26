@@ -24,4 +24,16 @@ public class  TypeOfMedicineHasTypeOfUsingService implements ITypeOfMedicineHasT
     public TypeOfMedicineHasTypeOfUsing deleteTypeOfMedicineHasTypeOfUsing(int id) throws SQLException {
         return typeOfMedicineHasTypeOfUsingDAO.deleteTypeOfMedicinesHasTypeOfUsing(id);
     }
+
+    @Override
+    public TypeOfMedicineHasTypeOfUsing addTypeOfMedicineHasTypeOfUsing(TypeOfMedicineHasTypeOfUsing typeOfMedicineHasTypeOfUsing) throws SQLException {
+        return typeOfMedicineHasTypeOfUsingDAO.addTypeOfMedicinesHasTypeOfUsing(
+                typeOfMedicineHasTypeOfUsing);
+    }
+
+    @Override
+    public TypeOfMedicineHasTypeOfUsing updateTypeOfMedicineHasTypeOfUsing(TypeOfMedicineHasTypeOfUsing typeOfMedicineHasTypeOfUsing) throws SQLException {
+        return typeOfMedicineHasTypeOfUsingDAO.updateTypeOfMedicinesHasTypeOfUsing(
+                typeOfMedicineHasTypeOfUsing);
+    }
 }

@@ -46,4 +46,14 @@ public class OrderStatusDAOFakeImpl implements IOrderStatusDao {
 
         return list.get(0);
     }
+
+    @Override
+    public OrderStatus addOrderStatus(OrderStatus orderStatus) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public OrderStatus updateOrderStatus(OrderStatus orderStatus) throws SQLException {
+        return null;
+    }
 }

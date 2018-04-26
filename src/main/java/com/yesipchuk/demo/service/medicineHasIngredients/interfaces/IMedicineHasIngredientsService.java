@@ -8,4 +8,8 @@ import java.util.List;
 public interface IMedicineHasIngredientsService {
     public List<MedicineHasIngredients> getAll() throws SQLException;
     public MedicineHasIngredients deleteMedicineHasIngredients(int id) throws SQLException;
+    public MedicineHasIngredients addMedicineHasIngredients(
+            MedicineHasIngredients medicineHasIngredients) throws SQLException;
+    public MedicineHasIngredients updateMedicineHasIngredients(
+            MedicineHasIngredients medicineHasIngredients) throws SQLException;
 }

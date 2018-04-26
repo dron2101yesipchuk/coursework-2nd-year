@@ -29,4 +29,9 @@ public class BuyerService implements IBuyerService{
     public Buyer addBuyer(Buyer buyer) throws SQLException {
         return buyerDao.addBuyer(buyer);
     }
+
+    @Override
+    public Buyer updateBuyer(Buyer buyer) throws SQLException {
+        return buyerDao.updateBuyer(buyer);
+    }
 }

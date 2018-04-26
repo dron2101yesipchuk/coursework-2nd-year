@@ -8,4 +8,6 @@ import java.util.List;
 public interface ITypeOfUsingDao {
     public List<TypeOfUsing> getAll() throws SQLException;
     public TypeOfUsing deleteTypeOfUsing(int id) throws SQLException;
+    public TypeOfUsing addTypeOfUsing(TypeOfUsing typeOfUsing) throws SQLException;
+    public TypeOfUsing updateTypeOfUsing(TypeOfUsing typeOfUsing) throws SQLException;
 }

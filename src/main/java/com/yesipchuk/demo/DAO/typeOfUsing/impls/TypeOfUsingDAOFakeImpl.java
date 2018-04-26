@@ -46,4 +46,14 @@ public class TypeOfUsingDAOFakeImpl implements ITypeOfUsingDao {
 
         return list.get(0);
     }
+
+    @Override
+    public TypeOfUsing addTypeOfUsing(TypeOfUsing typeOfUsing) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public TypeOfUsing updateTypeOfUsing(TypeOfUsing typeOfUsing) throws SQLException {
+        return null;
+    }
 }

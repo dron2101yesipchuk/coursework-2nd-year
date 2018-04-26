@@ -62,4 +62,14 @@ public class TypeOfMedicineDAOFakeImpl implements ITypeOfMedicinesDao {
 
         return list.get(0);
     }
+
+    @Override
+    public TypeOfMedicine addTypeOfMedicine(TypeOfMedicine typeOfMedicine) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public TypeOfMedicine updateTypeOfMedicine(TypeOfMedicine typeOfMedicine) throws SQLException {
+        return null;
+    }
 }

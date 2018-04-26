@@ -8,4 +8,6 @@ import java.util.List;
 public interface IBuyerHasMedicinesDao {
     public List<BuyersHasMedicines> getAll() throws SQLException;
     public BuyersHasMedicines deleteBuyerHasMedicines(int id) throws SQLException;
+    public BuyersHasMedicines addBuyerHasMedicines(BuyersHasMedicines buyersHasMedicines) throws SQLException;
+    public BuyersHasMedicines updateBuyerHasMedicines(BuyersHasMedicines buyersHasMedicines) throws SQLException;
 }

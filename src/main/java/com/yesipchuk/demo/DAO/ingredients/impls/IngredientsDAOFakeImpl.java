@@ -52,4 +52,14 @@ public class IngredientsDAOFakeImpl implements IIngredientsDao {
 
         return list.get(0);
     }
+
+    @Override
+    public Ingredients addIngredients(Ingredients ingredients) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public Ingredients updateIngredients(Ingredients ingredients) throws SQLException {
+        return null;
+    }
 }

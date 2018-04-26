@@ -25,4 +25,20 @@ public class OrderStatusController {
     public OrderStatus deleteOrderStatus(@RequestParam int id) throws SQLException {
         return orderStatusService.deleteOrderStatus(id);
     }
+
+    @RequestMapping("/order_status/add")
+    public OrderStatus addOrderStatus(@RequestParam int id, String nameOfStatus) throws SQLException {
+        OrderStatus orderStatus = new OrderStatus(id, nameOfStatus);
+
+        return orderStatusService.addOrderStatus(orderStatus);
+    }
+
+    @RequestMapping("/order_status/upd")
+    public OrderStatus updateOrderStatus(@RequestParam int id, String nameOfStatus) throws SQLException {
+        OrderStatus orderStatus = new OrderStatus(id, nameOfStatus);
+
+        return orderStatusService.updateOrderStatus(orderStatus);
+    }
+
+
 }

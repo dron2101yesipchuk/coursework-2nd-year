@@ -25,4 +25,16 @@ public class BuyerController {
     public Buyer deleteBuyer(@RequestParam int id) throws SQLException{
         return buyerService.deleteBuyer(id);
     }
+
+    @RequestMapping("/buyers/add")
+    public Buyer addBuyer(@RequestParam int id, String PIB, int age) throws SQLException{
+        Buyer buyer = new Buyer(id, PIB, age);
+        return buyerService.addBuyer(buyer);
+    }
+
+    @RequestMapping("/buyers/upd")
+    public Buyer updateBuyer(@RequestParam int id, String PIB, int age) throws SQLException{
+        Buyer buyer = new Buyer(id, PIB, age);
+        return buyerService.updateBuyer(buyer);
+    }
 }

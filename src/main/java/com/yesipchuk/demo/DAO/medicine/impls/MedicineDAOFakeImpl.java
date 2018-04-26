@@ -83,4 +83,14 @@ public class MedicineDAOFakeImpl implements IMedicineDao {
 
         return list.get(0);
     }
+
+    @Override
+    public Medicine addMedicine(Medicine medicine) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public Medicine updateMedicine(Medicine medicine) throws SQLException {
+        return null;
+    }
 }

@@ -24,4 +24,14 @@ public class DatesOfOrderingAndReceivingService implements IDatesOfOrderingAndRe
     public DatesOfOrderingAndReceiving deleteDate(int id) throws SQLException {
         return datesOfOrderingAndReceivingDAO.deleteDate(id);
     }
+
+    @Override
+    public DatesOfOrderingAndReceiving addDate(DatesOfOrderingAndReceiving datesOfOrderingAndReceiving) throws SQLException {
+        return datesOfOrderingAndReceivingDAO.addDate(datesOfOrderingAndReceiving);
+    }
+
+    @Override
+    public DatesOfOrderingAndReceiving updateDate(DatesOfOrderingAndReceiving datesOfOrderingAndReceiving) throws SQLException {
+        return datesOfOrderingAndReceivingDAO.updateDate(datesOfOrderingAndReceiving);
+    }
 }

@@ -21,7 +21,18 @@ public class TypeOfProductionService implements ITypeOfProductionService{
     }
 
     @Override
-    public TypeOfProduction deleteTypeOfPrduction(int id) throws SQLException {
+    public TypeOfProduction deleteTypeOfProduction(int id) throws SQLException {
         return typeOfProductionDAO.deleteTypeOfProduction(id);
     }
+
+    @Override
+    public TypeOfProduction addTypeOfPrduction(TypeOfProduction typeOfProduction) throws SQLException {
+        return typeOfProductionDAO.addTypeOfProduction(typeOfProduction);
+    }
+
+    @Override
+    public TypeOfProduction updateTypeOfPrduction(TypeOfProduction typeOfProduction) throws SQLException {
+        return typeOfProductionDAO.updateTypeOfProduction(typeOfProduction);
+    }
+
 }
