@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Buyer</title>
+    <title>Ingredients</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -15,7 +15,7 @@
     <!--<div class="row">
         <div class="col-md12">-->
     <div class="container-fluid"><div class="panel panel-default">
-        <div class="panel-heading"> Види спорту </div>
+        <div class="panel-heading"> Ingredients </div>
         <div class="datagrid">
 
             <table ><!--class="table table-striped"-->
@@ -27,7 +27,9 @@
                     <th>Критична норма</th>
                     <th>Кількість</th>
                     <th>Ціна</th>
-                    <th><button type="button" class="btn btn-success">Add</button></th>
+                    <th><button type="button" class="btn btn-success"
+                                data-toggle="modal" data-target="#addModal"
+                    >Add</button></th>
 
                 </tr>
                 </thead>
@@ -51,7 +53,7 @@
 
             </table>
         </div>
-        <!--добавление City-->
+        <!--inser ingredient-->
         <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -64,26 +66,35 @@
                     </div>
 
                     <div class="modal-body">
-                        Введіть Id Покупця
-                        <input type="text" id="buyerId">
-                        <br><br>
-                        Введіть ПІБ покупця
+                        Введіть Id Інгредієнта
+                        <input type="text" id="ingredientsId">
                         <br>
-                        <input type="text" id="buyerPIB">
+                        Введіть назву інгредієнта
                         <br>
-                        Введіть вік покупця
+                        <input type="text" id="ingredientsName">
                         <br>
-                        <input type="text" id="buyerAge">
+                        Введіть критичну норму
+                        <br>
+                        <input type="text" id="ingredientsCriticalRate">
+                        <br>
+                        Введіть поточну кількість
+                        <br>
+                        <input type="text" id="ingredientsAmount">
+                        <br>
+                        Введіть ціну
+                        <br>
+                        <input type="text" id="ingredientsPrice">
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" style="cursor:pointer" data-dismiss="modal">Закрити</button>
-                        <button type="button" style="cursor:pointer"  ng-click="ctrl.insert_buyer()">Додати</button>
+                        <button type="button" style="cursor:pointer"  ng-click="ctrl.insert_ingredients()">Додати</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--обновленіє Region-->
+        <!--update ingredient-->
         <div class="modal fade" id="updateModal" tabindex="-2" role="dialog" aria-labelledby="updateModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -95,10 +106,25 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Введіть нову назву виду спорту
+                        Введіть Id Інгредієнта
+                        <input type="text" id="ingredientsIdUPD">
                         <br>
-                        <input type="text" id="sportNameUPD">
+                        Введіть назву інгредієнта
                         <br>
+                        <input type="text" id="ingredientsNameUPD">
+                        <br>
+                        Введіть критичну норму
+                        <br>
+                        <input type="text" id="ingredientsCriticalRateUPD">
+                        <br>
+                        Введіть поточну кількість
+                        <br>
+                        <input type="text" id="ingredientsAmountUPD">
+                        <br>
+                        Введіть ціну
+                        <br>
+                        <input type="text" id="ingredientsPriceUPD">
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" style="cursor:pointer"

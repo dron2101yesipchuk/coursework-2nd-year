@@ -39,6 +39,4 @@ public class TypeOfProductionController {
 
         return typeOfProductionService.updateTypeOfPrduction(typeOfProduction);
     }
-
-
 }

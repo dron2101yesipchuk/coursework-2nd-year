@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Buyer</title>
+    <title>Type Of Production</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -12,10 +12,8 @@
 </head>
 <body ng-app = "demo">
 <div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" ><!--class="container"-->
-    <!--<div class="row">
-        <div class="col-md12">-->
     <div class="container-fluid"><div class="panel panel-default">
-        <div class="panel-heading"> Види спорту </div>
+        <div class="panel-heading">Type Of Production</div>
         <div class="datagrid">
 
             <table ><!--class="table table-striped"-->
@@ -24,7 +22,9 @@
 
                     <th>id</th>
                     <th>Назва типу виготовлення</th>
-                    <th><button type="button" class="btn btn-success">Add</button></th>
+                    <th><button type="button" class="btn btn-success"
+                                data-toggle="modal" data-target="#addModal"
+                    >Add</button></th>
 
                 </tr>
                 </thead>
@@ -45,7 +45,7 @@
 
             </table>
         </div>
-        <!--добавление City-->
+        <!--add type of production-->
         <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -58,26 +58,22 @@
                     </div>
 
                     <div class="modal-body">
-                        Введіть Id Покупця
-                        <input type="text" id="buyerId">
-                        <br><br>
-                        Введіть ПІБ покупця
+                        Введіть Id типу
+                        <input type="text" id="typeOfProductionID">
                         <br>
-                        <input type="text" id="buyerPIB">
+                        Введіть назву типу готування
                         <br>
-                        Введіть вік покупця
-                        <br>
-                        <input type="text" id="buyerAge">
+                        <input type="text" id="typeOfProductionName">
                     </div>
                     <div class="modal-footer">
                         <button type="button" style="cursor:pointer" data-dismiss="modal">Закрити</button>
-                        <button type="button" style="cursor:pointer"  ng-click="ctrl.insert_buyer()">Додати</button>
+                        <button type="button" style="cursor:pointer"  ng-click="ctrl.insert_type_of_production()">Додати</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--обновленіє Region-->
+        <!--update type of production-->
         <div class="modal fade" id="updateModal" tabindex="-2" role="dialog" aria-labelledby="updateModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -89,10 +85,12 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Введіть нову назву виду спорту
+                        Введіть Id типу
+                        <input type="text" id="typeOfProductionIDUPD">
                         <br>
-                        <input type="text" id="sportNameUPD">
+                        Введіть назву типу готування
                         <br>
+                        <input type="text" id="typeOfProductionNameUPD">
                     </div>
                     <div class="modal-footer">
                         <button type="button" style="cursor:pointer"
@@ -103,13 +101,9 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
-        <!--  </div>
-      </div>-->
     </div>
+</div>
 </body>
 
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>

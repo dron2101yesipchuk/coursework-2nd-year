@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Buyer</title>
+    <title>Order Status</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -15,7 +15,7 @@
     <!--<div class="row">
         <div class="col-md12">-->
     <div class="container-fluid"><div class="panel panel-default">
-        <div class="panel-heading"> Види спорту </div>
+        <div class="panel-heading">Order Status</div>
         <div class="datagrid">
 
             <table ><!--class="table table-striped"-->
@@ -24,7 +24,9 @@
 
                     <th>id</th>
                     <th>Статус замовлення</th>
-                    <th><button type="button" class="btn btn-success">Add</button></th>
+                    <th><button type="button" class="btn btn-success"
+                                data-toggle="modal" data-target="#addModal"
+                    >Add</button></th>
 
                 </tr>
                 </thead>
@@ -45,7 +47,7 @@
 
             </table>
         </div>
-        <!--добавление City-->
+        <!--add order status-->
         <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -58,26 +60,22 @@
                     </div>
 
                     <div class="modal-body">
-                        Введіть Id Покупця
-                        <input type="text" id="buyerId">
-                        <br><br>
-                        Введіть ПІБ покупця
+                        Введіть Id Статусу замовлення
+                        <input type="text" id="orderStatusId">
                         <br>
-                        <input type="text" id="buyerPIB">
+                        Введіть Назву Статусу замовлення
                         <br>
-                        Введіть вік покупця
-                        <br>
-                        <input type="text" id="buyerAge">
+                        <input type="text" id="orderStatusName">
                     </div>
                     <div class="modal-footer">
                         <button type="button" style="cursor:pointer" data-dismiss="modal">Закрити</button>
-                        <button type="button" style="cursor:pointer"  ng-click="ctrl.insert_buyer()">Додати</button>
+                        <button type="button" style="cursor:pointer"  ng-click="ctrl.insert_order_status()">Додати</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--обновленіє Region-->
+        <!--update order status-->
         <div class="modal fade" id="updateModal" tabindex="-2" role="dialog" aria-labelledby="updateModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -89,10 +87,12 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Введіть нову назву виду спорту
+                        Введіть нове Id Статусу замовлення
+                        <input type="text" id="orderStatusIdUPD">
                         <br>
-                        <input type="text" id="sportNameUPD">
+                        Введіть нову Назву Статусу замовлення
                         <br>
+                        <input type="text" id="orderStatusNameUPD">
                     </div>
                     <div class="modal-footer">
                         <button type="button" style="cursor:pointer"
