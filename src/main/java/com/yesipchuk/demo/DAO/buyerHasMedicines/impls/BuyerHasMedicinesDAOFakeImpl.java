@@ -120,7 +120,21 @@ public class BuyerHasMedicinesDAOFakeImpl implements IBuyerHasMedicinesDao {
 
     @Override
     public BuyersHasMedicines addBuyerHasMedicines(BuyersHasMedicines buyersHasMedicines) throws SQLException {
-        return null;
+        String sql = "INSERT INTO buyer_has_medicine (id, buyer_id, medicine_id, dates_of_ordering_and_receiving_id, PIB_of_doctor, diagnosis, amount_of_medicine) VALUES (?,?,?,?,?,?,?)";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setInt(1, buyersHasMedicines.getId());
+        statement.setInt(2, buyersHasMedicines.getBuyer().getId());
+        statement.setInt(3, buyersHasMedicines.getMedicine().getId());
+        statement.setInt(4, buyersHasMedicines.getDatesOfOrderingAndReceiving().getId());
+        statement.setString(5, buyersHasMedicines.getDoctorPIB());
+        statement.setString(6, buyersHasMedicines.getDiagnosis());
+        statement.setInt(7, buyersHasMedicines.getAmountOfMedicine());
+        int rowsInserted = statement.executeUpdate();
+        statement.close();
+        if (rowsInserted>0)
+            return buyersHasMedicines;
+        else
+            return null;
     }
 
     @Override

@@ -54,7 +54,7 @@ public class BuyerDAOFakeImpl implements IBuyerDao{
 
     @Override
     public Buyer addBuyer(Buyer buyer) throws SQLException {
-        String sql = "INSERT INTO buyer (id,PIB,age) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO buyer (id,PIB,age) VALUES (?,?,?)";
         PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
         statement.setInt(1, buyer.getId());
         statement.setString(2, buyer.getPIB());

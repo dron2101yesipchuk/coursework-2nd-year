@@ -49,7 +49,16 @@ public class OrderStatusDAOFakeImpl implements IOrderStatusDao {
 
     @Override
     public OrderStatus addOrderStatus(OrderStatus orderStatus) throws SQLException {
-        return null;
+        String sql = "INSERT INTO order_status (id, name_of_status) VALUES (?,?)";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setInt(1, orderStatus.getId());
+        statement.setString(2, orderStatus.getNameOfStatus());
+        int rowsInserted = statement.executeUpdate();
+        statement.close();
+        if (rowsInserted>0)
+            return orderStatus;
+        else
+            return null;
     }
 
     @Override

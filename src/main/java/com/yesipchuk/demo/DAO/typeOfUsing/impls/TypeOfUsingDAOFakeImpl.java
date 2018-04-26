@@ -49,7 +49,16 @@ public class TypeOfUsingDAOFakeImpl implements ITypeOfUsingDao {
 
     @Override
     public TypeOfUsing addTypeOfUsing(TypeOfUsing typeOfUsing) throws SQLException {
-        return null;
+        String sql = "INSERT INTO type_of_using (id, type_of_using) VALUES (?,?)";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setInt(1, typeOfUsing.getId());
+        statement.setString(2, typeOfUsing.getNameOfType());
+        int rowsInserted = statement.executeUpdate();
+        statement.close();
+        if (rowsInserted>0)
+            return typeOfUsing;
+        else
+            return null;
     }
 
     @Override

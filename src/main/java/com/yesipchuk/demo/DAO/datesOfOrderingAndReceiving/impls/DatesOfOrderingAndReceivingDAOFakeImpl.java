@@ -64,7 +64,18 @@ public class DatesOfOrderingAndReceivingDAOFakeImpl implements IDatesOfOrderingA
 
     @Override
     public DatesOfOrderingAndReceiving addDate(DatesOfOrderingAndReceiving dates) throws SQLException {
-        return null;
+        String sql = "INSERT INTO dates_of_ordering_and_receiving (id, date_of_ordering, date_of_receiving, order_status_id) VALUES (?,?,?,?)";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setInt(1, dates.getId());
+        statement.setDate(2, dates.getDateOfOrdering());
+        statement.setDate(3, dates.getDateOfReceiving());
+        statement.setInt(4, dates.getOrderStatus().getId());
+        int rowsInserted = statement.executeUpdate();
+        statement.close();
+        if (rowsInserted>0)
+            return dates;
+        else
+            return null;
     }
 
     @Override

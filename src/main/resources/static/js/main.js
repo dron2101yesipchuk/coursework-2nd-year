@@ -43,6 +43,17 @@ app.controller("AppCtrl", function($scope, $http){
         });
     };
 
+    this.insertbuyer_has_medicines = function add() {
+        var id = document.getElementById("buyerId").value;
+        var pib = document.getElementById("buyerPIB").value;
+        var age = document.getElementById("buyerAge").value;
+
+        $http.get('/api/buyer_has_medicines/add?id='+id+'&PIB='+pib+'&age='+age).then(function (response){
+            window.location.reload();
+        });
+
+    };
+
     /******************************DatesCRUD*************************/
     $scope.dates = [];
     $http.get('/api/dates').then(function (response){

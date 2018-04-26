@@ -100,7 +100,18 @@ public class MedicineHasIngredientsDAOFakeImpl implements IMedicinesHasIngredien
 
     @Override
     public MedicineHasIngredients addMedicineHasIngredients(MedicineHasIngredients medicineHasIngredients) throws SQLException {
-        return null;
+        String sql = "INSERT INTO medicine_has_ingredients (id, medicine_id, ingredients_id, amount_of_ingredients) VALUES (?,?,?,?)";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setInt(1, medicineHasIngredients.getId());
+        statement.setInt(2, medicineHasIngredients.getMedicine().getId());
+        statement.setInt(3, medicineHasIngredients.getIngredients().getId());
+        statement.setInt(4, medicineHasIngredients.getAmountOfIngredients());
+        int rowsInserted = statement.executeUpdate();
+        statement.close();
+        if (rowsInserted>0)
+            return medicineHasIngredients;
+        else
+            return null;
     }
 
     @Override

@@ -49,7 +49,16 @@ public class TypeOfProductionDAOFakeImpl implements ITypeOfProductionDao {
 
     @Override
     public TypeOfProduction addTypeOfProduction(TypeOfProduction typeOfProduction) throws SQLException {
-        return null;
+        String sql = "INSERT INTO type_of_production (id, type_of_production) VALUES (?,?)";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setInt(1, typeOfProduction.getId());
+        statement.setString(2, typeOfProduction.getNameOfType());
+        int rowsInserted = statement.executeUpdate();
+        statement.close();
+        if (rowsInserted>0)
+            return typeOfProduction;
+        else
+            return null;
     }
 
     @Override

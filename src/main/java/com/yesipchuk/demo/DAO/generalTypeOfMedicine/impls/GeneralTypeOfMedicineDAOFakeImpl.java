@@ -49,7 +49,16 @@ public class GeneralTypeOfMedicineDAOFakeImpl implements IGeneralTypeOfMedicineD
 
     @Override
     public GeneralTypeOfMedicine addGeneralType(GeneralTypeOfMedicine generalType) throws SQLException {
-        return null;
+        String sql = "INSERT INTO general_type_of_medicine (id, name_of_general_type) VALUES (?,?)";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setInt(1, generalType.getId());
+        statement.setString(2, generalType.getNameOfGeneralType());
+        int rowsInserted = statement.executeUpdate();
+        statement.close();
+        if (rowsInserted>0)
+            return generalType;
+        else
+            return null;
     }
 
     @Override

@@ -65,7 +65,18 @@ public class TypeOfMedicineDAOFakeImpl implements ITypeOfMedicinesDao {
 
     @Override
     public TypeOfMedicine addTypeOfMedicine(TypeOfMedicine typeOfMedicine) throws SQLException {
-        return null;
+        String sql = "INSERT INTO type_of_medicine (id, name_of_type, general_type_of_medicine_id, type_of_production_id) VALUES (?,?,?,?)";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setInt(1, typeOfMedicine.getId());
+        statement.setString(2, typeOfMedicine.getNameOfType());
+        statement.setInt(3, typeOfMedicine.getGeneralType().getId());
+        statement.setInt(4, typeOfMedicine.getTypeOfProduction().getId());
+        int rowsInserted = statement.executeUpdate();
+        statement.close();
+        if (rowsInserted>0)
+            return typeOfMedicine;
+        else
+            return null;
     }
 
     @Override

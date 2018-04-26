@@ -83,7 +83,17 @@ public class TypeOfMedicineHasTypeOfUsingDAOFakeImpl implements ITypeOfMedicineH
 
     @Override
     public TypeOfMedicineHasTypeOfUsing addTypeOfMedicinesHasTypeOfUsing(TypeOfMedicineHasTypeOfUsing typeOfMedicineHasTypeOfUsing) throws SQLException {
-        return null;
+        String sql = "INSERT INTO type_of_medicine_has_type_of_using (id, type_of_medicine_id, type_of_using_id) VALUES (?,?,?)";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setInt(1, typeOfMedicineHasTypeOfUsing.getId());
+        statement.setInt(2, typeOfMedicineHasTypeOfUsing.getTypeOfMedicine().getId());
+        statement.setInt(3, typeOfMedicineHasTypeOfUsing.getTypeOfUsing().getId());
+        int rowsInserted = statement.executeUpdate();
+        statement.close();
+        if (rowsInserted>0)
+            return typeOfMedicineHasTypeOfUsing;
+        else
+            return null;
     }
 
     @Override

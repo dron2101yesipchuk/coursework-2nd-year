@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buyer Has Medicines</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+          integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body ng-app = "demo">
+<div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" ><!--class="container"-->
+    <!--<div class="row">
+        <div class="col-md12">-->
+    <div class="container-fluid"><div class="panel panel-default">
+        <div class="panel-heading"> Buyers Has Medicines </div>
+        <div class="datagrid">
+
+            <table ><!--class="table table-striped"-->
+                <thead>
+                <tr>
+
+                    <th>id</th>
+                    <th>id Покупця</th>
+                    <th>id Медикаменту</th>
+                    <th>id Дати замовлення і отримання</th>
+                    <th>ПІБ доктора</th>
+                    <th>Діагноз</th>
+                    <th>Кількість медикаменту</th>
+                    <th><button type="button" class="btn btn-success">Add</button></th>
+
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat = "item in buyer_has_medicines">
+
+                    <td>{{item.id}}</td>
+                    <td>{{item.buyer.id}}</td>
+                    <td>{{item.medicine.id}}</td>
+                    <td>{{item.datesOfOrderingAndReceiving.id}}</td>
+                    <td>{{item.doctorPIB}}</td>
+                    <td>{{item.diagnosis}}</td>
+                    <td>{{item.amountOfMedicine}}</td>
+                    <td><button type="button" class="btn btn-warning">Update</button>
+                        <button type="button" class="btn btn-danger"
+                                ng-click="ctrl.del_buyer_has_medicines(item.id)"
+                        >Delete</button></td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+        <!--добавление City-->
+        <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addModalLabel">Додавання запису</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Закрити">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        Введіть Id
+                        <input type="text" id="buyerId">
+                        <br>
+                        Введіть Id покупця
+                        <br>
+                        <input type="text" id="buyerPIB">
+                        <br>
+                        Введіть Id ліків
+                        <br>
+                        <input type="text" id="buyerAge">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" style="cursor:pointer" data-dismiss="modal">Закрити</button>
+                        <button type="button" style="cursor:pointer"  ng-click="ctrl.insert_buyer()">Додати</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--обновленіє Region-->
+        <div class="modal fade" id="updateModal" tabindex="-2" role="dialog" aria-labelledby="updateModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateModalLabel">Редагування запису</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Закрити">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Введіть нову назву виду спорту
+                        <br>
+                        <input type="text" id="sportNameUPD">
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" style="cursor:pointer"
+                                data-dismiss="modal">Закрити</button>
+                        <button type="button" style="cursor:pointer"
+                                ng-click="ctrl.update_kind_of_sport()">Змінити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+        <!--  </div>-->
+    </div>
+</div>
+</body>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</html>
+
