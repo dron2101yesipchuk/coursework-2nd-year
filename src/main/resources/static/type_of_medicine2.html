@@ -24,9 +24,12 @@
 
                     <th>id</th>
                     <th>Назва типу</th>
-                    <th>id Загального типу</th>
-                    <th>id Типу виготовлення</th>
-                    <th><button type="button" class="btn btn-success">Add</button></th>
+                    <th>Загальний тип</th>
+                    <th>Тип виготовлення</th>
+                    <th><button type="button" class="btn btn-success"
+                                data-toggle="modal" data-target="#addModal"
+                                ng-click="ctrl.start_insert_type_of_medicine()"
+                    >Add</button></th>
 
                 </tr>
                 </thead>
@@ -36,8 +39,8 @@
 
                     <td>{{item.id}}</td>
                     <td>{{item.nameOfType}}</td>
-                    <td>{{item.generalType.id}}</td>
-                    <td>{{item.typeOfProduction.id}}</td>
+                    <td>{{item.generalType.nameOfGeneralType}}</td>
+                    <td>{{item.typeOfProduction.nameOfType}}</td>
                     <td><button type="button" class="btn btn-warning">Update</button>
                         <button type="button" class="btn btn-danger"
                                 ng-click="ctrl.del_type_of_medicine(item.id)"
@@ -49,7 +52,7 @@
 
             </table>
         </div>
-        <!--добавление City-->
+        <!--adding-->
         <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -62,20 +65,25 @@
                     </div>
 
                     <div class="modal-body">
-                        Введіть Id Покупця
-                        <input type="text" id="buyerId">
-                        <br><br>
-                        Введіть ПІБ покупця
+                        Введіть Id
+                        <input type="text" id="id">
                         <br>
-                        <input type="text" id="buyerPIB">
+                        Введіть назву типу
+                        <input type="text" id="typeName">
                         <br>
-                        Введіть вік покупця
+                        Виберіть загальний тип
+                        <select id="generalType" style="width: 475px">
+                        </select>
                         <br>
-                        <input type="text" id="buyerAge">
+                        Виберіть тип виготовлення
+                        <select id="productionType" style="width: 475px">
+                        </select>
+                        <br>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" style="cursor:pointer" data-dismiss="modal">Закрити</button>
-                        <button type="button" style="cursor:pointer"  ng-click="ctrl.insert_buyer()">Додати</button>
+                        <button type="button" style="cursor:pointer"  ng-click="ctrl.insert_type_of_medicine()">Додати</button>
                     </div>
                 </div>
             </div>

@@ -30,7 +30,8 @@ public class TypeOfMedicineHasTypeOfUsingDAOFakeImpl implements ITypeOfMedicineH
                 "JOIN type_of_production ON type_of_production.id " +
                 "= type_of_medicine.type_of_production_id\n" +
                 "JOIN type_of_using ON type_of_using.id " +
-                "= type_of_medicine_has_type_of_using.type_of_using_id;");
+                "= type_of_medicine_has_type_of_using.type_of_using_id" +
+                "order by type_of_medicine_has_type_of_using.id;");
         while(resultSet.next()){
             list.add(new TypeOfMedicineHasTypeOfUsing(
                         resultSet.getInt("id"),

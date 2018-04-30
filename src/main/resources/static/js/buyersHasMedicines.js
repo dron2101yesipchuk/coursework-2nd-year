@@ -76,9 +76,7 @@ app.controller("AppCtrl", function($scope, $http){
         $http.get('/api/buyer_has_medicines/add?id='+id+'&buyer_id='+buyer_id+'&medicine_id='
             +medicine_id+'&dates_id='+dates_id+'&doctorPIB='+doctorPIB+'&diagnosis='+diagnosis+
             '&amount='+amount).then(function (response){
-            setTimeout(function(){
                 window.location.reload();
-            });
         });
     };
 });

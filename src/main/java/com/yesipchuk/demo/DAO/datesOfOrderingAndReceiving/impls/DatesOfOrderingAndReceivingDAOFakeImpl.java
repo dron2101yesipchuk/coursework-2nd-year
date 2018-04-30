@@ -25,7 +25,8 @@ public class DatesOfOrderingAndReceivingDAOFakeImpl implements IDatesOfOrderingA
         ResultSet resultSet;
         resultSet = dataStorage.executeQuery("SELECT * FROM drugstore.dates_of_ordering_and_receiving\n" +
                 "JOIN order_status ON order_status.id " +
-                "= dates_of_ordering_and_receiving.order_status_id;");
+                "= dates_of_ordering_and_receiving.order_status_id\n" +
+                "order by dates_of_ordering_and_receiving.id");
         while(resultSet.next()){
             list.add(new DatesOfOrderingAndReceiving(resultSet.getInt("dates_of_ordering_and_receiving.id"),
                     resultSet.getDate("dates_of_ordering_and_receiving.date_of_ordering"),

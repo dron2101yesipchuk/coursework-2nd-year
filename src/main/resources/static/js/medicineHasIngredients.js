@@ -13,4 +13,49 @@ app.controller("AppCtrl", function($scope, $http){
             window.location.reload();
         });
     };
+
+    this.start_insert_medicine_has_ingredients = function add() {
+
+        $http.get('/api/medicine').then(function (response){
+            var medicines = response.data;
+            var selector = document.getElementById("medicineId");
+            $(selector).empty();
+            for (var i = 0; i < medicines.length; i++) {
+                var option = document.createElement("option");
+                option.text = medicines[i].nameOfMedicine;
+                option.value = medicines[i].id;
+                console.log(option);
+                selector.add(option);
+            }
+
+
+            $http.get('/api/ingredients').then(function (response){
+                var ingredients = response.data;
+                var selector = document.getElementById("ingredientId");
+                $(selector).empty();
+                for (var i = 0; i < ingredients.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = ingredients[i].name;
+                    option.value = ingredients[i].id;
+                    console.log(option);
+                    selector.add(option);
+                }
+            });
+        });
+    };
+
+    this.insert_medicine_has_ingredients = function add() {
+        var id = document.getElementById("id").value;
+        var indexOfMedicine = document.getElementById("medicineId").selectedIndex;
+        var medicine_id = document.getElementById("medicineId").options[indexOfMedicine].value;
+        var indexOfIngredient = document.getElementById("ingredientId").selectedIndex;
+        var ingredient_id = document.getElementById("ingredientId").options[indexOfIngredient].value;
+        var ingredientAmount = document.getElementById("ingredientAmount").value;
+
+
+        $http.get('/api/medicine/has_ingredients/add?id='+id+'&med_id='+medicine_id+'&ingredients_id='
+            +ingredient_id+'&ingredientsAmount='+ingredientAmount).then(function (response){
+            window.location.reload();
+        });
+    };
 });

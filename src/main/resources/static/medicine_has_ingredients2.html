@@ -23,10 +23,13 @@
                 <tr>
 
                     <th>id</th>
-                    <th>id медикаменту</th>
-                    <th>id інгредієнту</th>
+                    <th>Медикамент</th>
+                    <th>Інгредієнт</th>
                     <th>Кількість інгредіенту</th>
-                    <th><button type="button" class="btn btn-success">Add</button></th>
+                    <th><button type="button" class="btn btn-success"
+                                data-toggle="modal" data-target="#addModal"
+                                ng-click="ctrl.start_insert_medicine_has_ingredients()"
+                    >Add</button></th>
 
                 </tr>
                 </thead>
@@ -35,8 +38,8 @@
                 <tr ng-repeat = "item in medicinesHasIngredients">
 
                     <td>{{item.id}}</td>
-                    <td>{{item.medicine.id}}</td>
-                    <td>{{item.ingredients.id}}</td>
+                    <td>{{item.medicine.nameOfMedicine}}</td>
+                    <td>{{item.ingredients.name}}</td>
                     <td>{{item.amountOfIngredients}}</td>
                     <td><button type="button" class="btn btn-warning">Update</button>
                         <button type="button" class="btn btn-danger"
@@ -49,7 +52,8 @@
 
             </table>
         </div>
-        <!--добавление City-->
+
+        <!--adding-->
         <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -62,20 +66,25 @@
                     </div>
 
                     <div class="modal-body">
-                        Введіть Id Покупця
-                        <input type="text" id="buyerId">
-                        <br><br>
-                        Введіть ПІБ покупця
+                        Введіть Id
+                        <input type="text" id="id">
                         <br>
-                        <input type="text" id="buyerPIB">
+                        Виберіть медикамент
+                        <select id="medicineId" style="width: 475px">
+                        </select>
                         <br>
-                        Введіть вік покупця
+                        Виберіть інгредієнт
+                        <select id="ingredientId" style="width: 475px">
+                        </select>
                         <br>
-                        <input type="text" id="buyerAge">
+                        Введіть кількість інгредієнту
+                        <input type="text" id="ingredientAmount">
+                        <br>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" style="cursor:pointer" data-dismiss="modal">Закрити</button>
-                        <button type="button" style="cursor:pointer"  ng-click="ctrl.insert_buyer()">Додати</button>
+                        <button type="button" style="cursor:pointer"  ng-click="ctrl.insert_medicine_has_ingredients()">Додати</button>
                     </div>
                 </div>
             </div>
@@ -111,8 +120,7 @@
 
 
     </div>
-        <!--  </div>
-      </div>-->
+    </div>
     </div>
 </body>
 
