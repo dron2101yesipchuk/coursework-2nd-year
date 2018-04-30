@@ -23,13 +23,18 @@
                 <tr>
 
                     <th>id</th>
-                    <th>id Покупця</th>
-                    <th>id Медикаменту</th>
-                    <th>id Дати замовлення і отримання</th>
+                    <th>Покупець</th>
+                    <th>Медикамент</th>
+                    <th>Дати замовлення і отримання</th>
+                    <th>Дати отримання</th>
+                    <th>Статус замовлення</th>
                     <th>ПІБ доктора</th>
                     <th>Діагноз</th>
                     <th>Кількість медикаменту</th>
-                    <th><button type="button" class="btn btn-success">Add</button></th>
+                    <th><button type="button" class="btn btn-success"
+                                data-toggle="modal" data-target="#addModal"
+                                ng-click="ctrl.start_insert_buyer_has_medicines()"
+                    >Add</button></th>
 
                 </tr>
                 </thead>
@@ -38,9 +43,11 @@
                 <tr ng-repeat = "item in buyer_has_medicines">
 
                     <td>{{item.id}}</td>
-                    <td>{{item.buyer.id}}</td>
-                    <td>{{item.medicine.id}}</td>
-                    <td>{{item.datesOfOrderingAndReceiving.id}}</td>
+                    <td>{{item.buyer.pib}}</td>
+                    <td>{{item.medicine.nameOfMedicine}}</td>
+                    <td>{{item.datesOfOrderingAndReceiving.dateOfOrdering}}</td>
+                    <td>{{item.datesOfOrderingAndReceiving.dateOfReceiving}}</td>
+                    <td>{{item.datesOfOrderingAndReceiving.orderStatus.nameOfStatus}}</td>
                     <td>{{item.doctorPIB}}</td>
                     <td>{{item.diagnosis}}</td>
                     <td>{{item.amountOfMedicine}}</td>
@@ -55,7 +62,8 @@
 
             </table>
         </div>
-        <!--добавление City-->
+
+        <!--add BuyerHasMedicines -->
         <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -69,20 +77,33 @@
 
                     <div class="modal-body">
                         Введіть Id
-                        <input type="text" id="buyerId">
+                        <input type="text" id="id">
                         <br>
-                        Введіть Id покупця
+                        Виберіть Покупця
+                        <select id="BuyerID" style="width: 475px">
+                        </select>
                         <br>
-                        <input type="text" id="buyerPIB">
+                        Виберіть Медикамент
+                        <select id="MedicineID" style="width: 475px; margin-left: auto">
+                        </select>
                         <br>
-                        Введіть Id ліків
+                        Виберіть Дати отримання, замовлення і статусу замовлення
+                        <select id="DateID" style="width: 475px">
+                        </select>
                         <br>
-                        <input type="text" id="buyerAge">
-
+                        Введіть ПІБ лікаря
+                        <input type="text" id="doctorPIB">
+                        <br>
+                        Введіть діагноз
+                        <input type="text" id="diagnosis">
+                        <br>
+                        Введіть кількість медикаменту
+                        <input type="text" id="amountOfMedicine">
+                        <br>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" style="cursor:pointer" data-dismiss="modal">Закрити</button>
-                        <button type="button" style="cursor:pointer"  ng-click="ctrl.insert_buyer()">Додати</button>
+                        <button type="button" data-dismiss="modal">Закрити</button>
+                        <button type="button"  ng-click="ctrl.insert_buyer_has_medicines()">Додати</button>
                     </div>
                 </div>
             </div>

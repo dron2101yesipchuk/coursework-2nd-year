@@ -1,5 +1,8 @@
 package com.yesipchuk.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties
 public class BuyersHasMedicines {
     private Integer id;
     private Buyer buyer;

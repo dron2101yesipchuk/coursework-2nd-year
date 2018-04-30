@@ -39,15 +39,71 @@ app.controller("AppCtrl", function($scope, $http){
         });
     };
 
-    this.insert_buyer_has_medicines = function add() {
-        var id = document.getElementById("buyerId").value;
-        var pib = document.getElementById("buyerPIB").value;
-        var age = document.getElementById("buyerAge").value;
+    this.start_insert_buyer_has_medicines = function add() {
 
-        $http.get('/api/buyer_has_medicines/add?id='+id+'&PIB='+pib+'&age='+age).then(function (response){
-            window.location.reload();
+        $http.get('/api/buyers').then(function (response){
+            var buyers = response.data;
+            var selector = document.getElementById("BuyerID");
+            $(selector).empty();
+            for (var i = 0; i < buyers.length; i++) {
+                var option = document.createElement("option");
+                option.text = buyers[i].pib;
+                option.value = buyers[i].id;
+                console.log(option);
+                selector.add(option);
+            }
+
+
+            $http.get('/api/medicine').then(function (response){
+                var medicines = response.data;
+                var selector = document.getElementById("MedicineID");
+                $(selector).empty();
+                for (var i = 0; i < medicines.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = medicines[i].nameOfMedicine;
+                    option.value = medicines[i].id;
+                    console.log(option);
+                    selector.add(option);
+                }
+
+
+                $http.get('/api/dates').then(function (response){
+                    var dates = response.data;
+                    var selector = document.getElementById("DateID");
+                    $(selector).empty();
+                    for (var i = 0; i < dates.length; i++) {
+                        var option = document.createElement("option");
+                        option.text = dates[i].dateOfOrdering + "; " + dates[i].dateOfReceiving + "; "
+                            + dates[i].orderStatus.nameOfStatus;
+                        option.value = dates[i].id;
+                        console.log(option);
+                        selector.add(option);
+                    }
+                });
+            });
         });
+    };
 
+    this.insert_buyer_has_medicines = function add() {
+        var id = document.getElementById("id").value;
+        var indexOfBuyer = document.getElementById("BuyerID").selectedIndex;
+        var buyer_id = document.getElementById("BuyerID").options[indexOfBuyer].value;
+        var indexOfMedicine = document.getElementById("MedicineID").selectedIndex;
+        var medicine_id = document.getElementById("MedicineID").options[indexOfMedicine].value;
+        var indexOfDates = document.getElementById("DateID").selectedIndex;
+        var dates_id = document.getElementById("DateID").options[indexOfDates].value;
+        var doctorPIB = document.getElementById("doctorPIB").value;
+        var diagnosis = document.getElementById("diagnosis").value;
+        var amount = document.getElementById("amountOfMedicine").value;
+
+
+        $http.get('/api/buyer_has_medicines/add?id='+id+'&buyer_id='+buyer_id+'&medicine_id='
+            +medicine_id+'&dates_id='+dates_id+'&doctorPIB='+doctorPIB+'&diagnosis='+diagnosis+
+            '&amount='+amount).then(function (response){
+            setTimeout(function(){
+                window.location.reload();
+            });
+        });
     };
 
     /******************************DatesCRUD*************************/
@@ -144,8 +200,6 @@ app.controller("AppCtrl", function($scope, $http){
     this.del_medicine = function del(id) {
         $http.get('/api/medicine/del?id=' + id).then(function (response) {
             window.location.reload();
-            //window.alert('Покупець "' + response.data.name + '" був успішно видалений!');
-            //console.log(response);
         });
     };
 
@@ -159,8 +213,6 @@ app.controller("AppCtrl", function($scope, $http){
     this.del_medicine_has_ingredients = function del(id) {
         $http.get('/api/medicine/has_ingredients/del?id=' + id).then(function (response) {
             window.location.reload();
-            //window.alert('Покупець "' + response.data.name + '" був успішно видалений!');
-            //console.log(response);
         });
     };
 
@@ -174,8 +226,6 @@ app.controller("AppCtrl", function($scope, $http){
     this.del_type_of_medicine = function del(id) {
         $http.get('/api/type/medicine/del?id=' + id).then(function (response) {
             window.location.reload();
-            //window.alert('Покупець "' + response.data.name + '" був успішно видалений!');
-            //console.log(response);
         });
     };
 
@@ -189,8 +239,6 @@ app.controller("AppCtrl", function($scope, $http){
     this.del_type_of_medicine_has_type_of_using = function del(id) {
         $http.get('/api/type_medicine_has_type_using/del?id=' + id).then(function (response) {
             window.location.reload();
-            //window.alert('Покупець "' + response.data.name + '" був успішно видалений!');
-            //console.log(response);
         });
     };
 
@@ -226,8 +274,6 @@ app.controller("AppCtrl", function($scope, $http){
     this.del_type_of_using = function del(id) {
         $http.get('/api/type/using/del?id=' + id).then(function (response) {
             window.location.reload();
-            //window.alert('Покупець "' + response.data.name + '" був успішно видалений!');
-            //console.log(response);
         });
     };
 
