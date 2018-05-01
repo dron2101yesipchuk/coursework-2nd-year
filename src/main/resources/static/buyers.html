@@ -16,7 +16,7 @@
         <div class="panel-heading"> Buyers </div>
         <div class="datagrid">
 
-            <table ><!--class="table table-striped"-->
+            <table >
                 <thead>
                 <tr>
                     <th>id</th>
@@ -35,7 +35,10 @@
                     <td>{{item.id}}</td>
                     <td>{{item.pib}}</td>
                     <td>{{item.age}}</td>
-                    <td><button type="button" class="btn btn-warning">Update</button>
+                    <td><button type="button" class="btn btn-warning"
+                                data-toggle="modal" data-target="#updateModal"
+                                ng-click="ctrl.start_update_buyer(item.id)"
+                    >Update</button>
                         <button type="button" class="btn btn-danger"
                                 ng-click="ctrl.del_buyer(item.id)"
                         >Delete</button>
@@ -47,6 +50,7 @@
 
             </table>
         </div>
+
         <!--insert buyer-->
         <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
              aria-hidden="true">
@@ -91,9 +95,6 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Введіть новий Id Покупця
-                        <input type="text" id="buyerIdUPD">
-                        <br><br>
                         Введіть нове ПІБ покупця
                         <br>
                         <input type="text" id="buyerPIBUPD">
@@ -106,7 +107,7 @@
                         <button type="button" style="cursor:pointer"
                                 data-dismiss="modal">Закрити</button>
                         <button type="button" style="cursor:pointer"
-                                ng-click="ctrl.update_kind_of_sport()">Змінити</button>
+                                ng-click="ctrl.update_buyer()">Змінити</button>
                     </div>
                 </div>
             </div>

@@ -34,7 +34,10 @@
 
                     <td>{{item.id}}</td>
                     <td>{{item.nameOfType}}</td>
-                    <td><button type="button" class="btn btn-warning">Update</button>
+                    <td><button type="button" class="btn btn-warning"
+                                data-toggle="modal" data-target="#updateModal"
+                                ng-click="ctrl.start_update_type_of_using(item.id)"
+                    >Update</button>
                         <button type="button" class="btn btn-danger"
                                 ng-click="ctrl.del_type_of_using(item.id)"
                         >Delete</button></td>
@@ -86,10 +89,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Введіть Id типу
-                        <input type="text" id="typeOfUsingIDUPD">
-                        <br>
-                        Введіть назву типу використання
+                        Введіть нову назву типу використання
                         <br>
                         <input type="text" id="typeOfUsingNameUPD">
                     </div>
@@ -97,7 +97,7 @@
                         <button type="button" style="cursor:pointer"
                                 data-dismiss="modal">Закрити</button>
                         <button type="button" style="cursor:pointer"
-                                ng-click="ctrl.update_kind_of_sport()">Змінити</button>
+                                ng-click="ctrl.update_type_of_using()">Змінити</button>
                     </div>
                 </div>
             </div>

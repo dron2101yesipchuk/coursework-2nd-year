@@ -32,6 +32,6 @@ public class BuyerHasMedicinesService implements IBuyerHasMedicinesService{
 
     @Override
     public BuyersHasMedicines updateBuyerHasMedicines(BuyersHasMedicines buyersHasMedicines) throws SQLException {
-        return buyerHasMedicinesDAO.addBuyerHasMedicines(buyersHasMedicines);
+        return buyerHasMedicinesDAO.updateBuyerHasMedicines(buyersHasMedicines);
     }
 }

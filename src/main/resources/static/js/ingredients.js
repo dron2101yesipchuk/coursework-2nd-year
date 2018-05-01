@@ -27,4 +27,21 @@ app.controller("AppCtrl", function($scope, $http){
             window.location.reload();
         });
     };
+
+    var idIngredients;
+    this.start_update_ingredients = function updt(id) {
+        idIngredients=id;
+    };
+
+    this.update_ingredients = function upd() {
+        var name = document.getElementById("ingredientsNameUPD").value;
+        var criticalRate = document.getElementById("ingredientsCriticalRateUPD").value;
+        var amount = document.getElementById("ingredientsAmountUPD").value;
+        var price = document.getElementById("ingredientsPriceUPD").value;
+
+        $http.get('/api/ingredients/upd?id='+idIngredients+'&name='+name+'&criticalRate='+criticalRate+
+            '&amount='+amount+'&price='+price).then(function (response){
+            window.location.reload();
+        });
+    };
 });

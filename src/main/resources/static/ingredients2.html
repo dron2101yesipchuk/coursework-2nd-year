@@ -11,14 +11,12 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body ng-app = "demo">
-<div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" ><!--class="container"-->
-    <!--<div class="row">
-        <div class="col-md12">-->
+<div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" >
     <div class="container-fluid"><div class="panel panel-default">
         <div class="panel-heading"> Ingredients </div>
         <div class="datagrid">
 
-            <table ><!--class="table table-striped"-->
+            <table >
                 <thead>
                 <tr>
 
@@ -42,7 +40,10 @@
                     <td>{{item.criticalRate}}</td>
                     <td>{{item.amount}}</td>
                     <td>{{item.price}}</td>
-                    <td><button type="button" class="btn btn-warning">Update</button>
+                    <td><button type="button" class="btn btn-warning"
+                                data-toggle="modal" data-target="#updateModal"
+                                ng-click="ctrl.start_update_ingredients(item.id)"
+                    >Update</button>
                         <button type="button" class="btn btn-danger"
                                 ng-click="ctrl.del_ingredients(item.id)"
                         >Delete</button></td>
@@ -53,7 +54,8 @@
 
             </table>
         </div>
-        <!--inser ingredient-->
+
+        <!--insert ingredient-->
         <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -106,22 +108,19 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Введіть Id Інгредієнта
-                        <input type="text" id="ingredientsIdUPD">
-                        <br>
-                        Введіть назву інгредієнта
+                        Введіть нову назву інгредієнта
                         <br>
                         <input type="text" id="ingredientsNameUPD">
                         <br>
-                        Введіть критичну норму
+                        Введіть нову критичну норму
                         <br>
                         <input type="text" id="ingredientsCriticalRateUPD">
                         <br>
-                        Введіть поточну кількість
+                        Введіть нову поточну кількість
                         <br>
                         <input type="text" id="ingredientsAmountUPD">
                         <br>
-                        Введіть ціну
+                        Введіть нову ціну
                         <br>
                         <input type="text" id="ingredientsPriceUPD">
 
@@ -130,7 +129,7 @@
                         <button type="button" style="cursor:pointer"
                                 data-dismiss="modal">Закрити</button>
                         <button type="button" style="cursor:pointer"
-                                ng-click="ctrl.update_kind_of_sport()">Змінити</button>
+                                ng-click="ctrl.update_ingredients()">Змінити</button>
                     </div>
                 </div>
             </div>

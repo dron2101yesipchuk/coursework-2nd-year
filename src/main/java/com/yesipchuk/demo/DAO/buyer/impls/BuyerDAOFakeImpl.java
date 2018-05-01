@@ -69,6 +69,17 @@ public class BuyerDAOFakeImpl implements IBuyerDao{
 
     @Override
     public Buyer updateBuyer(Buyer buyer) throws SQLException {
-        return null;
+        String sql  ="UPDATE buyer SET buyer.PIB = ?, buyer.age = ? WHERE buyer.id = ?";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setString(1,buyer.getPIB());
+        statement.setInt(2,buyer.getAge());
+        statement.setInt(3, buyer.getId());
+
+        int rowsUpdated  = statement.executeUpdate();
+        statement.close();
+        if (rowsUpdated >0)
+            return buyer;
+        else
+            return null;
     }
 }

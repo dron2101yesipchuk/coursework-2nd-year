@@ -11,14 +11,12 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body ng-app = "demo">
-<div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" ><!--class="container"-->
-    <!--<div class="row">
-        <div class="col-md12">-->
+<div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" >
     <div class="container-fluid"><div class="panel panel-default">
         <div class="panel-heading"> General Types Of Medicine </div>
         <div class="datagrid">
 
-            <table ><!--class="table table-striped"-->
+            <table >
                 <thead>
                 <tr>
                     <th>id</th>
@@ -35,7 +33,10 @@
 
                     <td>{{item.id}}</td>
                     <td>{{item.nameOfGeneralType}}</td>
-                    <td><button type="button" class="btn btn-warning">Update</button>
+                    <td><button type="button" class="btn btn-warning"
+                                data-toggle="modal" data-target="#updateModal"
+                                ng-click="ctrl.start_update_general_type(item.id)"
+                    >Update</button>
                         <button type="button" class="btn btn-danger"
                                 ng-click="ctrl.del_general_types(item.id)"
                         >Delete</button></td>
@@ -46,6 +47,7 @@
 
             </table>
         </div>
+
         <!--insert generalType-->
         <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
              aria-hidden="true">
@@ -74,7 +76,7 @@
             </div>
         </div>
 
-        <!--обновленіє Region-->
+        <!--update-->
         <div class="modal fade" id="updateModal" tabindex="-2" role="dialog" aria-labelledby="updateModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -86,10 +88,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Введіть Id Типу
-                        <input type="text" id="generalTypeIdUPD">
-                        <br>
-                        Введіть ПІБ покупця
+                        Введіть нову назву типу
                         <br>
                         <input type="text" id="generalTypeNameUPD">
                     </div>
@@ -97,7 +96,7 @@
                         <button type="button" style="cursor:pointer"
                                 data-dismiss="modal">Закрити</button>
                         <button type="button" style="cursor:pointer"
-                                ng-click="ctrl.update_kind_of_sport()">Змінити</button>
+                                ng-click="ctrl.update_general_type()">Змінити</button>
                     </div>
                 </div>
             </div>

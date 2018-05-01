@@ -23,4 +23,17 @@ app.controller("AppCtrl", function($scope, $http){
             window.location.reload();
         });
     };
+
+    var idTypeOfProduction;
+    this.start_update_type_of_production = function updt(id) {
+        idTypeOfProduction=id;
+    };
+
+    this.update_type_of_production = function upd() {
+        var name = document.getElementById("typeOfProductionNameUPD").value;
+
+        $http.get('/api/type/production/upd?id='+idTypeOfProduction+'&nameOfType='+name).then(function (response){
+            window.location.reload();
+        });
+    };
 });

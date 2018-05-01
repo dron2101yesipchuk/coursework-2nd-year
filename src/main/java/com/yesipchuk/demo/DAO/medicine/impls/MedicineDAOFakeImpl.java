@@ -106,6 +106,29 @@ public class MedicineDAOFakeImpl implements IMedicineDao {
 
     @Override
     public Medicine updateMedicine(Medicine medicine) throws SQLException {
-        return null;
+        String sql  ="UPDATE medicine SET medicine.name_of_medicine = ?, " +
+                "medicine.type_of_medicine_id = ?," +
+                "medicine.critical_rate = ?," +
+                "medicine.amount = ?," +
+                "medicine.price = ?," +
+                "medicine.manufacture_date = ?," +
+                "medicine.expiration_term = ?," +
+                " WHERE medicine.id = ?";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setString(1,medicine.getNameOfMedicine());
+        statement.setInt(2,medicine.getTypeOfMedicine().getId());
+        statement.setInt(3, medicine.getCriticalRate());
+        statement.setInt(4, medicine.getAmount());
+        statement.setDouble(5, medicine.getPrice());
+        statement.setDate(6, medicine.getManufactureDate());
+        statement.setInt(7, medicine.getExpirationTerm());
+        statement.setInt(8, medicine.getId());
+
+        int rowsUpdated  = statement.executeUpdate();
+        statement.close();
+        if (rowsUpdated >0)
+            return medicine;
+        else
+            return null;
     }
 }

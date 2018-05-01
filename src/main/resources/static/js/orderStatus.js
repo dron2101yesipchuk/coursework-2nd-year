@@ -22,4 +22,17 @@ app.controller("AppCtrl", function($scope, $http){
             window.location.reload();
         });
     };
+
+    var idOrderStatus;
+    this.start_update_order_status = function updt(id) {
+        idOrderStatus=id;
+    };
+
+    this.update_order_status = function upd() {
+        var name = document.getElementById("orderStatusNameUPD").value;
+
+        $http.get('/api/order_status/upd?id='+idOrderStatus+'&nameOfStatus='+name).then(function (response){
+            window.location.reload();
+        });
+    };
 });

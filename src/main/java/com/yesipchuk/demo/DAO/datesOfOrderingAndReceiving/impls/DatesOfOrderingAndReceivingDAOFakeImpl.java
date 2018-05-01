@@ -81,6 +81,22 @@ public class DatesOfOrderingAndReceivingDAOFakeImpl implements IDatesOfOrderingA
 
     @Override
     public DatesOfOrderingAndReceiving updateDate(DatesOfOrderingAndReceiving dates) throws SQLException {
-        return null;
+        String sql  ="UPDATE dates_of_ordering_and_receiving " +
+                "SET dates_of_ordering_and_receiving.date_of_ordering = ?, " +
+                "dates_of_ordering_and_receiving.date_of_receiving = ?, " +
+                "dates_of_ordering_and_receiving.order_status_id = ? " +
+                "WHERE dates_of_ordering_and_receiving.id = ?";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setDate(1,dates.getDateOfOrdering());
+        statement.setDate(2,dates.getDateOfReceiving());
+        statement.setInt(3,dates.getOrderStatus().getId());
+        statement.setInt(4, dates.getId());
+
+        int rowsUpdated  = statement.executeUpdate();
+        statement.close();
+        if (rowsUpdated >0)
+            return dates;
+        else
+            return null;
     }
 }

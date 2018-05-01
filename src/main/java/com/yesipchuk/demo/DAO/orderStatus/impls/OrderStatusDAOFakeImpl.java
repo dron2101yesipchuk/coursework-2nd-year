@@ -63,6 +63,18 @@ public class OrderStatusDAOFakeImpl implements IOrderStatusDao {
 
     @Override
     public OrderStatus updateOrderStatus(OrderStatus orderStatus) throws SQLException {
-        return null;
+        String sql  ="UPDATE order_status " +
+                "SET order_status.name_of_status = ? " +
+                "WHERE order_status.id = ?";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setString(1,orderStatus.getNameOfStatus());
+        statement.setInt(2, orderStatus.getId());
+
+        int rowsUpdated  = statement.executeUpdate();
+        statement.close();
+        if (rowsUpdated >0)
+            return orderStatus;
+        else
+            return null;
     }
 }

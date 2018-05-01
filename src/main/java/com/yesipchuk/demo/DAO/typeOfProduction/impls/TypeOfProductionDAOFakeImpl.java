@@ -63,6 +63,18 @@ public class TypeOfProductionDAOFakeImpl implements ITypeOfProductionDao {
 
     @Override
     public TypeOfProduction updateTypeOfProduction(TypeOfProduction typeOfProduction) throws SQLException {
-        return null;
+        String sql  ="UPDATE type_of_production " +
+                "SET type_of_production.type_of_production = ? " +
+                "WHERE type_of_production.id = ?";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setString(1,typeOfProduction.getNameOfType());
+        statement.setInt(2, typeOfProduction.getId());
+
+        int rowsUpdated  = statement.executeUpdate();
+        statement.close();
+        if (rowsUpdated >0)
+            return typeOfProduction;
+        else
+            return null;
     }
 }

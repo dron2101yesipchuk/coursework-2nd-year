@@ -81,6 +81,22 @@ public class TypeOfMedicineDAOFakeImpl implements ITypeOfMedicinesDao {
 
     @Override
     public TypeOfMedicine updateTypeOfMedicine(TypeOfMedicine typeOfMedicine) throws SQLException {
-        return null;
+        String sql  ="UPDATE type_of_medicine " +
+                "SET type_of_medicine.name_of_type = ?, " +
+                "type_of_medicine.general_type_of_medicine_id = ?, " +
+                "type_of_medicine.type_of_production_id = ? " +
+                "WHERE type_of_medicine.id = ?";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setString(1,typeOfMedicine.getNameOfType());
+        statement.setInt(2,typeOfMedicine.getGeneralType().getId());
+        statement.setInt(3,typeOfMedicine.getTypeOfProduction().getId());
+        statement.setInt(4, typeOfMedicine.getId());
+
+        int rowsUpdated  = statement.executeUpdate();
+        statement.close();
+        if (rowsUpdated >0)
+            return typeOfMedicine;
+        else
+            return null;
     }
 }

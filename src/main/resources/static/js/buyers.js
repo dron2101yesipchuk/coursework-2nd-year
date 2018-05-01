@@ -25,4 +25,18 @@ app.controller("AppCtrl", function($scope, $http){
         });
 
     };
+
+    var idBuyer;
+    this.start_update_buyer = function updt(id) {
+        idBuyer=id;
+    };
+
+    this.update_buyer = function upd() {
+        var pib = document.getElementById("buyerPIBUPD").value;
+        var age = document.getElementById("buyerAgeUPD").value;
+
+        $http.get('/api/buyers/upd?id='+idBuyer+'&PIB='+pib+'&age='+age).then(function (response){
+            window.location.reload();
+        });
+    };
 });

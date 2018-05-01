@@ -23,4 +23,17 @@ app.controller("AppCtrl", function($scope, $http){
             window.location.reload();
         });
     };
+
+    var idTypeOfUsing;
+    this.start_update_type_of_using = function updt(id) {
+        idTypeOfUsing=id;
+    };
+
+    this.update_type_of_using = function upd() {
+        var name = document.getElementById("typeOfUsingNameUPD").value;
+
+        $http.get('/api/type/using/upd?id='+idTypeOfUsing+'&nameOfType='+name).then(function (response){
+            window.location.reload();
+        });
+    };
 });

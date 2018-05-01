@@ -63,6 +63,18 @@ public class TypeOfUsingDAOFakeImpl implements ITypeOfUsingDao {
 
     @Override
     public TypeOfUsing updateTypeOfUsing(TypeOfUsing typeOfUsing) throws SQLException {
-        return null;
+        String sql  ="UPDATE type_of_using " +
+                "SET type_of_using.type_of_using = ? " +
+                "WHERE type_of_using.id = ?";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setString(1,typeOfUsing.getNameOfType());
+        statement.setInt(2, typeOfUsing.getId());
+
+        int rowsUpdated  = statement.executeUpdate();
+        statement.close();
+        if (rowsUpdated >0)
+            return typeOfUsing;
+        else
+            return null;
     }
 }

@@ -22,6 +22,18 @@ app.controller("AppCtrl", function($scope, $http){
         $http.get('/api/general_types/add?id='+id+'&generalType='+name).then(function (response){
             window.location.reload();
         });
+    };
 
+    var idGenType;
+    this.start_update_general_type = function updt(id) {
+        idGenType=id;
+    };
+
+    this.update_general_type = function upd() {
+        var name = document.getElementById("generalTypeNameUPD").value;
+
+        $http.get('/api/general_types/upd?id='+idGenType+'&generalType='+name).then(function (response){
+            window.location.reload();
+        });
     };
 });

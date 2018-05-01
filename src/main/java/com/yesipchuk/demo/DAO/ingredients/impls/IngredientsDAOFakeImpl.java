@@ -72,6 +72,24 @@ public class IngredientsDAOFakeImpl implements IIngredientsDao {
 
     @Override
     public Ingredients updateIngredients(Ingredients ingredients) throws SQLException {
-        return null;
+        String sql  ="UPDATE ingredients " +
+                "SET ingredients.name = ?, " +
+                " ingredients.critical_rate = ?, " +
+                " ingredients.amount = ?, " +
+                " ingredients.price = ? " +
+                "WHERE ingredients.id = ?";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
+        statement.setString(1,ingredients.getName());
+        statement.setInt(2,ingredients.getCriticalRate());
+        statement.setInt(3,ingredients.getAmount());
+        statement.setDouble(4,ingredients.getPrice());
+        statement.setInt(5, ingredients.getId());
+
+        int rowsUpdated  = statement.executeUpdate();
+        statement.close();
+        if (rowsUpdated >0)
+            return ingredients;
+        else
+            return null;
     }
 }
