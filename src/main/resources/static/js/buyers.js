@@ -27,8 +27,10 @@ app.controller("AppCtrl", function($scope, $http){
     };
 
     var idBuyer;
-    this.start_update_buyer = function updt(id) {
+    this.start_update_buyer = function updt(id, PIB, age) {
         idBuyer=id;
+        document.getElementById("buyerPIBUPD").value = PIB;
+        document.getElementById("buyerAgeUPD").value = age;
     };
 
     this.update_buyer = function upd() {

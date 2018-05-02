@@ -47,7 +47,12 @@
                     <td>{{item.price}}</td>
                     <td>{{item.manufactureDate}}</td>
                     <td>{{item.expirationTerm}}</td>
-                    <td><button type="button" class="btn btn-warning">Update</button>
+                    <td><button type="button" class="btn btn-warning"
+                                data-toggle="modal" data-target="#updateModal"
+                                ng-click="ctrl.start_update_medicine(item.id, item.nameOfMedicine,
+                                item.criticalRate, item.amount, item.price, item.manufactureDate,
+                                item.expirationTerm)"
+                    >Update</button>
                         <button type="button" class="btn btn-danger"
                                 ng-click="ctrl.del_medicine(item.id)"
                         >Delete</button></td>
@@ -120,16 +125,34 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Введіть нову назву виду спорту
+                        Введіть нову назву медикаменту
+                        <input type="text" id="medicineNameUPD">
                         <br>
-                        <input type="text" id="sportNameUPD">
+                        Виберіть новий тип медикаменту
+                        <select id="typeIDUPD" style="width: 475px">
+                        </select>
+                        <br>
+                        Введіть нову критичну норму
+                        <input type="text" id="criticalRateUPD">
+                        <br>
+                        Введіть нову поточну кількість
+                        <input type="text" id="amountUPD">
+                        <br>
+                        Введіть нову ціну медикаменту
+                        <input type="text" id="priceUPD">
+                        <br>
+                        Введіть нову дату виготовлення
+                        <input type="text" id="manufactureDateUPD">
+                        <br>
+                        Введіть нову термін придатності
+                        <input type="text" id="expirationTermUPD">
                         <br>
                     </div>
                     <div class="modal-footer">
                         <button type="button" style="cursor:pointer"
                                 data-dismiss="modal">Закрити</button>
                         <button type="button" style="cursor:pointer"
-                                ng-click="ctrl.update_kind_of_sport()">Змінити</button>
+                                ng-click="ctrl.update_medicine()">Змінити</button>
                     </div>
                 </div>
             </div>

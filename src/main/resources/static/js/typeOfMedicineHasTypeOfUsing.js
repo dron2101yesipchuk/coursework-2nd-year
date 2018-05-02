@@ -56,4 +56,51 @@ app.controller("AppCtrl", function($scope, $http){
             window.location.reload();
         });
     };
+
+    var idUpdate;
+    this.start_update_type_of_medicine_has_type_of_using = function updt(id) {
+        idUpdate = id;
+
+        $http.get('/api/type/medicine').then(function (response){
+            var types = response.data;
+            var selector = document.getElementById("typeIDUPD");
+            $(selector).empty();
+            for (var i = 0; i < types.length; i++) {
+                var option = document.createElement("option");
+                option.text = types[i].nameOfType;
+                option.value = types[i].id;
+                console.log(option);
+                selector.add(option);
+            }
+
+            $http.get('/api/type/using').then(function (response) {
+                var types = response.data;
+                var selector = document.getElementById("usingIDUPD");
+                $(selector).empty();
+                for (var i = 0; i < types.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = types[i].nameOfType;
+                    option.value = types[i].id;
+                    console.log(option);
+                    selector.add(option);
+                }
+            });
+        });
+    };
+
+    this.update_type_of_medicine_has_type_of_using = function upd() {
+        var indexOfMedicineType = document.getElementById("typeIDUPD").selectedIndex;
+        var medicineType_id = document.getElementById("typeIDUPD").options[indexOfMedicineType].value;
+        var indexOfUsingType = document.getElementById("usingIDUPD").selectedIndex;
+        var usingType_id = document.getElementById("usingIDUPD").options[indexOfUsingType].value;
+
+
+        $http.get('/api/type_medicine_has_type_using/upd?id='+idUpdate
+            +'&type_of_medicine_id='+medicineType_id
+            +'&type_of_using_id='+usingType_id).then(function (response){
+            window.location.reload();
+        });
+    };
+
+
 });

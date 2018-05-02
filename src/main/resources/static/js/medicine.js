@@ -50,4 +50,50 @@ app.controller("AppCtrl", function($scope, $http){
         });
     };
 
+    var idMedicine;
+    this.start_update_medicine = function updt(id, name, criticalRate, amount, price,
+                                               manufactureDate, expirationTerm) {
+        idMedicine = id;
+        document.getElementById("medicineNameUPD").value = name;
+        document.getElementById("criticalRateUPD").value = criticalRate;
+        document.getElementById("amountUPD").value = amount;
+        document.getElementById("priceUPD").value = price;
+        document.getElementById("manufactureDateUPD").value = manufactureDate;
+        document.getElementById("expirationTermUPD").value = expirationTerm;
+
+        $http.get('/api/type/medicine').then(function (response){
+            var types = response.data;
+            var selector = document.getElementById("typeIDUPD");
+            $(selector).empty();
+            for (var i = 0; i < types.length; i++) {
+                var option = document.createElement("option");
+                option.text = types[i].nameOfType;
+                option.value = types[i].id;
+                console.log(option);
+                selector.add(option);
+            }
+        });
+    };
+
+    this.update_medicine = function upd() {
+        var nameOfMedicine = document.getElementById("medicineNameUPD").value;
+        var indexOfType = document.getElementById("typeIDUPD").selectedIndex;
+        var typeOfMedicineID = document.getElementById("typeIDUPD").options[indexOfType].value;
+        var criticalRate = document.getElementById("criticalRateUPD").value;
+        var amount = document.getElementById("amountUPD").value;
+        var price = document.getElementById("priceUPD").value;
+        var manufactureDate = document.getElementById("manufactureDateUPD").value;
+        var expirationTerm = document.getElementById("expirationTermUPD").value;
+
+
+        $http.get('/api/medicine/upd?id='+idMedicine+'&nameOfMedicine='+nameOfMedicine
+            +'&type_id='+typeOfMedicineID+'&criticalRate='+criticalRate+'&amount='+amount
+            +'&price='+price+'&manufactureDate='+manufactureDate+'&expirationTerm='+expirationTerm)
+            .then(function (response){
+                window.location.reload();
+        });
+    };
+
+
+
 });

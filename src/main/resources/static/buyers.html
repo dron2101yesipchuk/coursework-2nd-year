@@ -37,7 +37,7 @@
                     <td>{{item.age}}</td>
                     <td><button type="button" class="btn btn-warning"
                                 data-toggle="modal" data-target="#updateModal"
-                                ng-click="ctrl.start_update_buyer(item.id)"
+                                ng-click="ctrl.start_update_buyer(item.id, item.pib, item.age)"
                     >Update</button>
                         <button type="button" class="btn btn-danger"
                                 ng-click="ctrl.del_buyer(item.id)"
@@ -96,11 +96,9 @@
                     </div>
                     <div class="modal-body">
                         Введіть нове ПІБ покупця
-                        <br>
                         <input type="text" id="buyerPIBUPD">
                         <br>
                         Введіть новий вік покупця
-                        <br>
                         <input type="text" id="buyerAgeUPD">
                     </div>
                     <div class="modal-footer">

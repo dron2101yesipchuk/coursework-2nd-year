@@ -79,4 +79,74 @@ app.controller("AppCtrl", function($scope, $http){
                 window.location.reload();
         });
     };
+
+    var idBuyersHasMedicines;
+    this.start_update_buyer_has_medicines = function updt(id, doctorPIB, diagnosis, amount){
+        idBuyersHasMedicines = id;
+
+        $http.get('/api/buyers').then(function (response){
+            var buyers = response.data;
+            var selector = document.getElementById("BuyerIDUPD");
+            $(selector).empty();
+            for (var i = 0; i < buyers.length; i++) {
+                var option = document.createElement("option");
+                option.text = buyers[i].pib;
+                option.value = buyers[i].id;
+                console.log(option);
+                selector.add(option);
+            }
+
+
+            $http.get('/api/medicine').then(function (response){
+                var medicines = response.data;
+                var selector = document.getElementById("MedicineIDUPD");
+                $(selector).empty();
+                for (var i = 0; i < medicines.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = medicines[i].nameOfMedicine;
+                    option.value = medicines[i].id;
+                    console.log(option);
+                    selector.add(option);
+                }
+
+
+                $http.get('/api/dates').then(function (response){
+                    var dates = response.data;
+                    var selector = document.getElementById("DateIDUPD");
+                    $(selector).empty();
+                    for (var i = 0; i < dates.length; i++) {
+                        var option = document.createElement("option");
+                        option.text = dates[i].dateOfOrdering + "; " + dates[i].dateOfReceiving + "; "
+                            + dates[i].orderStatus.nameOfStatus;
+                        option.value = dates[i].id;
+                        console.log(option);
+                        selector.add(option);
+                    }
+                });
+            });
+        });
+
+        document.getElementById("doctorPIBUPD").value = doctorPIB;
+        document.getElementById("diagnosisUPD").value = diagnosis;
+        document.getElementById("amountOfMedicineUPD").value = amount;
+    };
+
+    this.update_buyer_has_medicines = function upd(){
+        var indexOfBuyer = document.getElementById("BuyerIDUPD").selectedIndex;
+        var buyer_id = document.getElementById("BuyerIDUPD").options[indexOfBuyer].value;
+        var indexOfMedicine = document.getElementById("MedicineIDUPD").selectedIndex;
+        var medicine_id = document.getElementById("MedicineIDUPD").options[indexOfMedicine].value;
+        var indexOfDates = document.getElementById("DateIDUPD").selectedIndex;
+        var dates_id = document.getElementById("DateIDUPD").options[indexOfDates].value;
+        var doctorPIB = document.getElementById("doctorPIBUPD").value;
+        var diagnosis = document.getElementById("diagnosisUPD").value;
+        var amount = document.getElementById("amountOfMedicineUPD").value;
+
+
+        $http.get('/api/buyer_has_medicines/upd?id='+idBuyersHasMedicines+'&buyer_id='+buyer_id+'&medicine_id='
+            +medicine_id+'&dates_id='+dates_id+'&doctorPIB='+doctorPIB+'&diagnosis='+diagnosis+
+            '&amount='+amount).then(function (response){
+            window.location.reload();
+        });
+    };
 });

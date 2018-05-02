@@ -50,7 +50,11 @@
                     <td>{{item.doctorPIB}}</td>
                     <td>{{item.diagnosis}}</td>
                     <td>{{item.amountOfMedicine}}</td>
-                    <td><button type="button" class="btn btn-warning">Update</button>
+                    <td><button type="button" class="btn btn-warning"
+                                data-toggle="modal" data-target="#updateModal"
+                                ng-click="ctrl.start_update_buyer_has_medicines(item.id, item.doctorPIB,
+                                item.diagnosis, item.amountOfMedicine)"
+                    >Update</button>
                         <button type="button" class="btn btn-danger"
                                 ng-click="ctrl.del_buyer_has_medicines(item.id)"
                         >Delete</button></td>
@@ -120,16 +124,33 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Введіть нову назву виду спорту
+                        Виберіть Покупця
+                        <select id="BuyerIDUPD" style="width: 475px">
+                        </select>
                         <br>
-                        <input type="text" id="sportNameUPD">
+                        Виберіть Медикамент
+                        <select id="MedicineIDUPD" style="width: 475px">
+                        </select>
+                        <br>
+                        Виберіть Дати отримання, замовлення і статусу замовлення
+                        <select id="DateIDUPD" style="width: 475px">
+                        </select>
+                        <br>
+                        Введіть ПІБ лікаря
+                        <input type="text" id="doctorPIBUPD">
+                        <br>
+                        Введіть діагноз
+                        <input type="text" id="diagnosisUPD">
+                        <br>
+                        Введіть кількість медикаменту
+                        <input type="text" id="amountOfMedicineUPD">
                         <br>
                     </div>
                     <div class="modal-footer">
                         <button type="button" style="cursor:pointer"
                                 data-dismiss="modal">Закрити</button>
                         <button type="button" style="cursor:pointer"
-                                ng-click="ctrl.update_kind_of_sport()">Змінити</button>
+                                ng-click="ctrl.update_buyer_has_medicines()">Змінити</button>
                     </div>
                 </div>
             </div>

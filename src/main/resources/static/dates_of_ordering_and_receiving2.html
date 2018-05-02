@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body ng-app = "demo">
-<div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" ><!--class="container"-->
-    <!--<div class="row">
-        <div class="col-md12">-->
+<div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" >
     <div class="container-fluid"><div class="panel panel-default">
         <div class="panel-heading"> Дати замовлення і отримання </div>
         <div class="datagrid">
@@ -41,7 +39,10 @@
                     <td>{{item.dateOfOrdering}}</td>
                     <td>{{item.dateOfReceiving}}</td>
                     <td>{{item.orderStatus.nameOfStatus}}</td>
-                    <td><button type="button" class="btn btn-warning">Update</button>
+                    <td><button type="button" class="btn btn-warning"
+                                data-toggle="modal" data-target="#updateModal"
+                                ng-click="ctrl.start_update_dates(item.id, item.dateOfOrdering, item.dateOfReceiving)"
+                    >Update</button>
                         <button type="button" class="btn btn-danger"
                                 ng-click="ctrl.del_dates(item.id)"
                         >Delete</button></td>
@@ -51,6 +52,7 @@
 
             </table>
         </div>
+
         <!--добавление City-->
         <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
              aria-hidden="true">
@@ -97,16 +99,21 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Введіть нову назву виду спорту
+                        Введіть нову дату замовлення
+                        <input type="text" id="dateOfOrderingUPD">
                         <br>
-                        <input type="text" id="sportNameUPD">
+                        Введіть нову дату отримання
+                        <input type="text" id="dateOfReceivingUPD">
                         <br>
+                        Виберіть нову статус замовлення
+                        <select id="orderStatusIDUPD" style="width: 475px">
+                        </select>
                     </div>
                     <div class="modal-footer">
                         <button type="button" style="cursor:pointer"
                                 data-dismiss="modal">Закрити</button>
                         <button type="button" style="cursor:pointer"
-                                ng-click="ctrl.update_kind_of_sport()">Змінити</button>
+                                ng-click="ctrl.update_date()">Змінити</button>
                     </div>
                 </div>
             </div>

@@ -112,7 +112,7 @@ public class MedicineDAOFakeImpl implements IMedicineDao {
                 "medicine.amount = ?," +
                 "medicine.price = ?," +
                 "medicine.manufacture_date = ?," +
-                "medicine.expiration_term = ?," +
+                "medicine.expiration_term = ?" +
                 " WHERE medicine.id = ?";
         PreparedStatement statement = dataStorage.getCon().prepareStatement(sql);
         statement.setString(1,medicine.getNameOfMedicine());
