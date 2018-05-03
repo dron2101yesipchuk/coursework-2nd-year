@@ -11,18 +11,19 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body ng-app = "demo">
-<div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" ><!--class="container"-->
+<div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" >
     <div class="container-fluid"><div class="panel panel-default">
-        <div class="panel-heading"> Buyers </div>
+        <div class="panel-heading"> Покупці </div>
         <div class="datagrid">
 
             <table >
                 <thead>
                 <tr>
-                    <th>id</th>
-                    <th>ПІБ</th>
-                    <th>Вік</th>
-                    <th><button type="button" class="btn btn-success"
+                    <th style="width: 30px; padding-left: 3px">id</th>
+                    <th style="padding-left: 3px">ПІБ</th>
+                    <th style="width: 40px; padding-left: 5px">Вік</th>
+                    <th style="width: 95px">
+                        <button style="width: 95px" type="button" class="btn btn-success"
                                 data-toggle="modal" data-target="#addModal"
                     >Add</button>
                     </th>
@@ -32,14 +33,16 @@
                 <tbody>
                 <tr ng-repeat = "item in buyers">
 
-                    <td>{{item.id}}</td>
-                    <td>{{item.pib}}</td>
-                    <td>{{item.age}}</td>
-                    <td><button type="button" class="btn btn-warning"
+                    <td style=" padding-left: 3px">{{item.id}}</td>
+                    <td style="padding-left: 3px">{{item.pib}}</td>
+                    <td style="padding-left: 5px">{{item.age}}</td>
+                    <td ><button style="padding: -1px"
+                            type="button" class="btn btn-warning"
                                 data-toggle="modal" data-target="#updateModal"
                                 ng-click="ctrl.start_update_buyer(item.id, item.pib, item.age)"
                     >Update</button>
-                        <button type="button" class="btn btn-danger"
+                        <button style="padding: -1px"
+                                type="button" class="btn btn-danger"
                                 ng-click="ctrl.del_buyer(item.id)"
                         >Delete</button>
                     </td>
@@ -95,10 +98,10 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Введіть нове ПІБ покупця
+                        Введіть ПІБ покупця
                         <input type="text" id="buyerPIBUPD">
                         <br>
-                        Введіть новий вік покупця
+                        Введіть вік покупця
                         <input type="text" id="buyerAgeUPD">
                     </div>
                     <div class="modal-footer">
@@ -114,8 +117,6 @@
 
 
     </div>
-        <!--  </div>
-      </div>-->
     </div>
 </div>
 </body>

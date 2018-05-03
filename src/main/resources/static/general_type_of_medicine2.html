@@ -13,15 +13,16 @@
 <body ng-app = "demo">
 <div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" >
     <div class="container-fluid"><div class="panel panel-default">
-        <div class="panel-heading"> General Types Of Medicine </div>
+        <div class="panel-heading"> Загальні типи медикаментів</div>
         <div class="datagrid">
 
             <table >
                 <thead>
                 <tr>
-                    <th>id</th>
-                    <th>Назва загального типу</th>
-                    <th><button type="button" class="btn btn-success"
+                    <th style="width: 30px; padding-left: 3px">id</th>
+                    <th style="padding-left: 3px">Назва загального типу</th>
+                    <th style="width: 95px">
+                        <button style="width: 95px" type="button" class="btn btn-success"
                                 data-toggle="modal" data-target="#addModal"
                     >Add</button></th>
 
@@ -31,8 +32,8 @@
                 <tbody>
                 <tr ng-repeat = "item in generalTypes">
 
-                    <td>{{item.id}}</td>
-                    <td>{{item.nameOfGeneralType}}</td>
+                    <td style="padding-left: 3px">{{item.id}}</td>
+                    <td style="padding-left: 3px">{{item.nameOfGeneralType}}</td>
                     <td><button type="button" class="btn btn-warning"
                                 data-toggle="modal" data-target="#updateModal"
                                 ng-click="ctrl.start_update_general_type(item.id)"
@@ -64,7 +65,7 @@
                         Введіть Id типу
                         <input type="text" id="generalTypeId">
                         <br>
-                        Введіть Назву типу
+                        Введіть назву типу
                         <br>
                         <input type="text" id="generalTypeName">
                     </div>

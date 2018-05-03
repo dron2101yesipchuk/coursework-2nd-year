@@ -20,15 +20,16 @@
                 <thead>
                 <tr>
 
-                    <th>id</th>
-                    <th>Назва медикаменту</th>
-                    <th>id Типу медикаменту</th>
-                    <th>Критична норма</th>
-                    <th>Кількість</th>
-                    <th>Ціна</th>
-                    <th>Дата вироблення</th>
-                    <th>Термін придатності</th>
-                    <th><button type="button" class="btn btn-success"
+                    <th style="width: 30px; padding-left: 3px">id</th>
+                    <th style="padding-left: 3px">Назва медикаменту</th>
+                    <th style="width: 150px; padding-left: 3px">Тип медикаменту</th>
+                    <th style="width: 150px; padding-left: 3px">Критична норма</th>
+                    <th style="width: 50px; padding-left: 3px">К-сть</th>
+                    <th style="width: 50px; padding-left: 3px">Ціна</th>
+                    <th style="width: 150px; padding-left: 3px">Дата вироблення</th>
+                    <th style="width: 170px; padding-left: 3px">Термін придатності</th>
+                    <th style="width: 95px">
+                        <button style="width: 95px" type="button" class="btn btn-success"
                                 data-toggle="modal" data-target="#addModal"
                                 ng-click="ctrl.start_insert_medicine()"
                     >Add</button></th>
@@ -39,14 +40,14 @@
                 <tbody>
                 <tr ng-repeat = "item in medicines">
 
-                    <td>{{item.id}}</td>
-                    <td>{{item.nameOfMedicine}}</td>
-                    <td>{{item.typeOfMedicine.nameOfType}}</td>
-                    <td>{{item.criticalRate}}</td>
-                    <td>{{item.amount}}</td>
-                    <td>{{item.price}}</td>
-                    <td>{{item.manufactureDate}}</td>
-                    <td>{{item.expirationTerm}}</td>
+                    <td style="padding-left: 3px">{{item.id}}</td>
+                    <td style="padding-left: 3px">{{item.nameOfMedicine}}</td>
+                    <td style="padding-left: 3px">{{item.typeOfMedicine.nameOfType}}</td>
+                    <td style="padding-left: 3px">{{item.criticalRate}}</td>
+                    <td style="padding-left: 3px">{{item.amount}}</td>
+                    <td style="padding-left: 3px">{{item.price}}</td>
+                    <td style="padding-left: 3px">{{item.manufactureDate}}</td>
+                    <td style="padding-left: 3px">{{item.expirationTerm}}</td>
                     <td><button type="button" class="btn btn-warning"
                                 data-toggle="modal" data-target="#updateModal"
                                 ng-click="ctrl.start_update_medicine(item.id, item.nameOfMedicine,
@@ -113,7 +114,7 @@
             </div>
         </div>
 
-        <!--обновленіє Region-->
+        <!--update-->
         <div class="modal fade" id="updateModal" tabindex="-2" role="dialog" aria-labelledby="updateModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -125,26 +126,26 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Введіть нову назву медикаменту
+                        Введіть назву медикаменту
                         <input type="text" id="medicineNameUPD">
                         <br>
-                        Виберіть новий тип медикаменту
+                        Виберіть тип медикаменту
                         <select id="typeIDUPD" style="width: 475px">
                         </select>
                         <br>
-                        Введіть нову критичну норму
+                        Введіть критичну норму
                         <input type="text" id="criticalRateUPD">
                         <br>
-                        Введіть нову поточну кількість
+                        Введіть поточну кількість
                         <input type="text" id="amountUPD">
                         <br>
-                        Введіть нову ціну медикаменту
+                        Введіть ціну медикаменту
                         <input type="text" id="priceUPD">
                         <br>
-                        Введіть нову дату виготовлення
+                        Введіть дату виготовлення
                         <input type="text" id="manufactureDateUPD">
                         <br>
-                        Введіть нову термін придатності
+                        Введіть термін придатності
                         <input type="text" id="expirationTermUPD">
                         <br>
                     </div>

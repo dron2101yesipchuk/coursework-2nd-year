@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Buyer</title>
+    <title>Type Of Medicine</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -13,18 +13,19 @@
 <body ng-app = "demo">
 <div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" >
     <div class="container-fluid"><div class="panel panel-default">
-        <div class="panel-heading"> Види спорту </div>
+        <div class="panel-heading">Типи медикаментів</div>
         <div class="datagrid">
 
             <table >
                 <thead>
                 <tr>
 
-                    <th>id</th>
-                    <th>Назва типу</th>
-                    <th>Загальний тип</th>
-                    <th>Тип виготовлення</th>
-                    <th><button type="button" class="btn btn-success"
+                    <th style="width: 30px; padding-left: 3px">id</th>
+                    <th style="padding-left: 3px">Назва типу</th>
+                    <th style="padding-left: 3px">Загальний тип</th>
+                    <th style="padding-left: 3px">Тип виготовлення</th>
+                    <th style="width: 95px">
+                        <button style="width: 95px" type="button" class="btn btn-success"
                                 data-toggle="modal" data-target="#addModal"
                                 ng-click="ctrl.start_insert_type_of_medicine()"
                     >Add</button></th>
@@ -35,10 +36,10 @@
                 <tbody>
                 <tr ng-repeat = "item in typeOfMedicine">
 
-                    <td>{{item.id}}</td>
-                    <td>{{item.nameOfType}}</td>
-                    <td>{{item.generalType.nameOfGeneralType}}</td>
-                    <td>{{item.typeOfProduction.nameOfType}}</td>
+                    <td style="padding-left: 3px">{{item.id}}</td>
+                    <td style="padding-left: 3px">{{item.nameOfType}}</td>
+                    <td style="padding-left: 3px">{{item.generalType.nameOfGeneralType}}</td>
+                    <td style="padding-left: 3px">{{item.typeOfProduction.nameOfType}}</td>
                     <td><button type="button" class="btn btn-warning"
                                 data-toggle="modal" data-target="#updateModal"
                                 ng-click="ctrl.start_update_type_of_medicine(item.id, item.nameOfType)"
@@ -53,6 +54,7 @@
 
             </table>
         </div>
+
         <!--adding-->
         <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
              aria-hidden="true">
@@ -90,7 +92,7 @@
             </div>
         </div>
 
-        <!--обновленіє Region-->
+        <!--Update-->
         <div class="modal fade" id="updateModal" tabindex="-2" role="dialog" aria-labelledby="updateModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -102,14 +104,14 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Введіть нову назву типу
+                        Введіть назву типу
                         <input type="text" id="typeNameUPD">
                         <br>
-                        Виберіть новий загальний тип
+                        Виберіть загальний тип
                         <select id="generalTypeUPD" style="width: 475px">
                         </select>
                         <br>
-                        Виберіть новий тип виготовлення
+                        Виберіть тип виготовлення
                         <select id="productionTypeUPD" style="width: 475px">
                         </select>
                         <br>
@@ -127,8 +129,7 @@
 
 
     </div>
-        <!--  </div>
-      </div>-->
+    </div>
     </div>
 </body>
 

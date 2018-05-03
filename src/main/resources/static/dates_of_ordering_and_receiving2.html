@@ -20,11 +20,12 @@
                 <thead>
                 <tr>
 
-                    <th>id</th>
-                    <th>Дата замовлення</th>
-                    <th>Дата отримання покупцем</th>
-                    <th>id Статусу замовлення</th>
-                    <th><button type="button" class="btn btn-success"
+                    <th style="width: 30px; padding-left: 3px">id</th>
+                    <th style="padding-left: 3px">Дата замовлення</th>
+                    <th style="padding-left: 3px">Дата отримання</th>
+                    <th style="width: 160px; padding-left: 3px">Статус замовлення</th>
+                    <th style="width: 95px">
+                        <button style="width: 95px" type="button" class="btn btn-success"
                                 data-toggle="modal" data-target="#addModal"
                                 ng-click="ctrl.start_insert_dates()"
                     >Add</button></th>
@@ -35,10 +36,10 @@
                 <tbody>
                 <tr ng-repeat = "item in dates">
 
-                    <td>{{item.id}}</td>
-                    <td>{{item.dateOfOrdering}}</td>
-                    <td>{{item.dateOfReceiving}}</td>
-                    <td>{{item.orderStatus.nameOfStatus}}</td>
+                    <td style="padding-left: 3px">{{item.id}}</td>
+                    <td style="padding-left: 3px">{{item.dateOfOrdering}}</td>
+                    <td style="padding-left: 3px">{{item.dateOfReceiving}}</td>
+                    <td style="padding-left: 3px">{{item.orderStatus.nameOfStatus}}</td>
                     <td><button type="button" class="btn btn-warning"
                                 data-toggle="modal" data-target="#updateModal"
                                 ng-click="ctrl.start_update_dates(item.id, item.dateOfOrdering, item.dateOfReceiving)"
@@ -53,7 +54,7 @@
             </table>
         </div>
 
-        <!--добавление City-->
+        <!--Add-->
         <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -87,7 +88,7 @@
             </div>
         </div>
 
-        <!--обновленіє Region-->
+        <!--Update-->
         <div class="modal fade" id="updateModal" tabindex="-2" role="dialog" aria-labelledby="updateModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -99,13 +100,13 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Введіть нову дату замовлення
+                        Введіть дату замовлення
                         <input type="text" id="dateOfOrderingUPD">
                         <br>
-                        Введіть нову дату отримання
+                        Введіть дату отримання
                         <input type="text" id="dateOfReceivingUPD">
                         <br>
-                        Виберіть нову статус замовлення
+                        Виберіть статус замовлення
                         <select id="orderStatusIDUPD" style="width: 475px">
                         </select>
                     </div>

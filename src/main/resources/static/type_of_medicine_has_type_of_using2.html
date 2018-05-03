@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Buyer</title>
+    <title>Type Of Medicine Has Type Of Using</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -13,16 +13,17 @@
 <body ng-app = "demo">
 <div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" >
     <div class="container-fluid"><div class="panel panel-default">
-        <div class="panel-heading"> Види спорту </div>
+        <div class="panel-heading">Тип медикаменту - тип використання</div>
         <div class="datagrid">
 
             <table >
                 <thead>
                 <tr>
-                    <th>id</th>
-                    <th>id Тип медикаменту</th>
-                    <th>id Тип використання</th>
-                    <th><button type="button" class="btn btn-success"
+                    <th style="width: 30px; padding-left: 3px">id</th>
+                    <th style="padding-left: 3px">Тип медикаменту</th>
+                    <th style="padding-left: 3px">Тип використання</th>
+                    <th style="width: 95px">
+                        <button style="width: 95px" type="button" class="btn btn-success"
                                 data-toggle="modal" data-target="#addModal"
                                 ng-click="ctrl.start_insert_type_of_medicine_has_type_of_using()"
                     >Add</button></th>
@@ -33,9 +34,9 @@
                 <tbody>
                 <tr ng-repeat = "item in typeOfProductionHasTypeOfUsing">
 
-                    <td>{{item.id}}</td>
-                    <td>{{item.typeOfMedicine.nameOfType}}</td>
-                    <td>{{item.typeOfUsing.nameOfType}}</td>
+                    <td style="padding-left: 3px">{{item.id}}</td>
+                    <td style="padding-left: 3px">{{item.typeOfMedicine.nameOfType}}</td>
+                    <td style="padding-left: 3px">{{item.typeOfUsing.nameOfType}}</td>
                     <td><button type="button" class="btn btn-warning"
                                 data-toggle="modal" data-target="#updateModal"
                                 ng-click="ctrl.start_update_type_of_medicine_has_type_of_using(item.id)"
@@ -84,7 +85,7 @@
             </div>
         </div>
 
-        <!--обновленіє Region-->
+        <!--updating-->
         <div class="modal fade" id="updateModal" tabindex="-2" role="dialog" aria-labelledby="updateModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">

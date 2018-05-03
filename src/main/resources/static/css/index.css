@@ -25,7 +25,7 @@ body {
 }
 
 .datagrid table thead th {
-    background: #93e886;
+    background: #e87a30;
     color: #0f0f0f;
     font-size: 18px;
     font-weight: bold;
@@ -45,7 +45,7 @@ body {
 
 
 .datagrid table tbody tr:nth-child(even) {
-    background: #c6ffb0;
+    background: #ff993d;
     /*background: #fff5d8;*/
     color: #0f0f0f;
 }
@@ -65,7 +65,7 @@ body {
 }
 
 .btn-modal-ok{
-    background-color: #90ff7a;
+    background-color: #ffb348;
     color: white;
     cursor:pointer;
 
